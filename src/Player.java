@@ -12,13 +12,11 @@ public class Player {
         raises = 0;
     }
 
-    public float fldprcnt() {
-        return (folds/hands)*100;
+    public double fldprcnt() {
+        return ((double)folds/(double)hands)*100;
     }
 
-    public float raiseprcnt() {
-        return(raises/hands)*100;
-    }
+    public float raiseprcnt() { return ((raises/hands)*100); }
 
     public void hand_append(String tyyppi) {
         hands += 1;
@@ -28,7 +26,7 @@ public class Player {
         } else if (tyyppi.equals("raised")) {
             raises += 1;
         }
-        System.out.println(name + "fold-%.: " + fldprcnt());
+        System.out.println(name + "fold-%.: " + fldprcnt() +"  hands: " + hands +" folds: " + folds);
     }
 
 

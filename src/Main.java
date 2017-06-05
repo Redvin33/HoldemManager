@@ -51,11 +51,17 @@ public class Main {
                 if (line.contains("SUMMARY")) {
                     while (line.length() != 0) {
                         line = queue.take();
-                        System.out.println(line);
+
                         if (line.contains("Seat")) {
                             String[] lista = line.split(" ");
                             String name = lista[2];
                             String foldraise = lista[3];
+                            if (foldraise.equals("(button)")) {
+                                foldraise = lista[4];
+                            } else if (foldraise.equals("(small") || foldraise.equals("(big")) {
+                                foldraise = lista[5];
+                            }
+
                             players.get(name).hand_append(foldraise);
 
                         }

@@ -20,7 +20,8 @@
 
 # Gradle:
 .idea/**/gradle.xml
-.idea/**/libraries
+# Ei voi poistaa koska rikkoo kirjastojen linkitykset
+# .idea/**/libraries
 
 # CMake
 cmake-build-debug/

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CommunityPoker.iml" filepath="$PROJECT_DIR$/CommunityPoker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HoldemManager.iml" filepath="$PROJECT_DIR$/HoldemManager.iml" />
     </modules>
   </component>
 </project>

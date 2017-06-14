@@ -26,36 +26,49 @@ public class Main {
 
     private static void handle(){
         Map<String, Player> players = new HashMap<>();
+        String buttonname = "";
         while (true){
             try {
                 String line = queue.take();
-                if (line.contains("Seat") && line.contains(":")) {
-                    String name = line.split(" ")[2];
+
+                if (line.contains("Seat") && line.contains(":") && line.contains("chips")) {
+                    String[] row = line.split("\\(");
+                    String name = row[0].split(":")[1];
+                    name = name.substring(1, name.length() -1);
+                    if (row[0].split(":")[0].equals("Seat 1")) {
+                        buttonname = name;
+                    }
+
+
                     if (!players.keySet().contains(name)) {
                         Player player = new Player(name);
                         players.put(name, player);
                     }
                 }
-                if (line.contains("SUMMARY")) {
-                    while (line.length() != 0) {
+                //Starts to handle preflop actions and stops when detects line which contains ***FLOP***
+                if (line.contains("*** HOLE CARDS ***")) {
+
+
+                    while (!line.contains("*** FLOP ***") && !line.contains("*** SUMMARY ***")) {
+
                         line = queue.take();
-
-                        if (line.contains("Seat")) {
-                            String[] lista = line.split(" ");
-                            String name = lista[2];
-                            String foldraise = lista[3];
-                            if (foldraise.equals("(button)")) {
-                                foldraise = lista[4];
-                            } else if (foldraise.equals("(small") || foldraise.equals("(big")) {
-                                foldraise = lista[5];
-                            }
-
-                            players.get(name).hand_append(foldraise);
-
+                        if (!line.contains(":") || line.contains("doesn't")) {
+                            continue;
                         }
-                    }
 
+                        String[] lista = line.split(":");
+                        String name = lista[0];
+                        String[] list2 = lista[1].split(" ");
+                        String foldraise = list2[1];
+                        if (name.equals(buttonname)) {
+                            players.get(name).button(foldraise);
+                        } else {
+                            players.get(name).hand_append(foldraise);
+                        }
+
+                    }
                 }
+
 
             } catch (InterruptedException e) {
 

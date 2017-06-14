@@ -1,17 +1,5 @@
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.input.Tailer;
-import org.apache.commons.io.IOUtils;
-
 import java.io.File;
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.FileNotFoundException;
-import java.io.StringWriter;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.concurrent.BlockingQueue;

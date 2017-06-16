@@ -55,20 +55,31 @@ public class Main {
         while (true){
             try {
                 String line = queue.take();
+
                 Matcher handMatcher = handPattern.matcher(line);
                 Matcher seatMatcher = seatPattern.matcher(line);
                 Matcher turnMatcher =  turnPattern.matcher(line);
                 if(handMatcher.matches()){
                     System.out.println(handMatcher.group(1) + handMatcher.group(2) + " " + handMatcher.group(3) + handMatcher.group(4)+handMatcher.group(5)+"/"+handMatcher.group(6) + " " + handMatcher.group(7) + handMatcher.group(8) + handMatcher.group(9));
+
                 }
                 if (seatMatcher.matches()){
                     System.out.println("Seat " + seatMatcher.group(1) + ": " +trim(seatMatcher.group(2)) + " (" + seatMatcher.group(3) + seatMatcher.group(4) + ")");
+                    String name = seatMatcher.group(2);
+                    if (seatMatcher.group(1).equals("Seat 1:")) {
+                        buttonname = name;
+                    }
+
+
+                    if (!players.keySet().contains(name)) {
+                        Player player = new Player(name);
+                        players.put(name, player);
+                    }
                 }
                 if (turnMatcher.matches()){
                     Turn turn = Turn.valueOf(trim(turnMatcher.group(1)));
                     switch (turn){
                         case HOLECARDS:
-                            System.out.println("PREFLOP");
                             break;
                         case FLOP:
                             System.out.println("FLOP: " + turnMatcher.group(2));

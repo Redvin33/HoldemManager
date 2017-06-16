@@ -66,8 +66,9 @@ public class Main {
                 if (seatMatcher.matches()){
                     System.out.println("Seat " + seatMatcher.group(1) + ": " +trim(seatMatcher.group(2)) + " (" + seatMatcher.group(3) + seatMatcher.group(4) + ")");
                     String name = seatMatcher.group(2);
-                    if (seatMatcher.group(1).equals("Seat 1:")) {
+                    if (seatMatcher.group(1).equals("1")) {
                         buttonname = name;
+                        System.out.println(buttonname);
                     }
 
 

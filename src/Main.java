@@ -10,6 +10,18 @@ import java.util.regex.Pattern;
 
 public class Main {
 
+    //Pls tehkää joku paremmat
+    //Matches 'PokerStars Zoom Hand #171235037798:  Hold'em No Limit ($0.01/$0.02) - 2017/06/02 5:35:03 ET'
+    static Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+)\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+)");
+    //Matches 'Seat 1: hirsch262 ($2.10 in chips)"
+    static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)+\\s+\\(([$|€|£])(\\S+).in.chips\\).");
+    //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
+    static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
+    //Matches action
+    static Pattern actionPattern = Pattern.compile("(\\w+):.(folds|calls|bets|raises).{0,20}");
+    //Matches calling
+
+
     public enum Turn{
         HOLECARDS,FLOP,TURN,RIVER,SHOWDOWN,SUMMARY
     }
@@ -35,21 +47,14 @@ public class Main {
         Tailer tailer = new Tailer(file,listener,1000 ,false);
         Thread thread = new Thread(tailer);
 
-
         thread.start();
         handle();
 
     }
 
-    private static void handle(){
-        //Pls tehkää joku paremmat
-        //Matches 'PokerStars Zoom Hand #171235037798:  Hold'em No Limit ($0.01/$0.02) - 2017/06/02 5:35:03 ET'
-        Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+)\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+)");
-        //Matches 'Seat 1: hirsch262 ($2.10 in chips)"
-        Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(\\S+).in.chips\\).");
-        //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
-        Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
 
+
+    private static void handle(){
         Map<String, Player> players = new HashMap<>();
         String buttonname = "";
         while (true){
@@ -59,11 +64,14 @@ public class Main {
                 Matcher handMatcher = handPattern.matcher(line);
                 Matcher seatMatcher = seatPattern.matcher(line);
                 Matcher turnMatcher =  turnPattern.matcher(line);
+
                 if(handMatcher.matches()){
                     System.out.println(handMatcher.group(1) + handMatcher.group(2) + " " + handMatcher.group(3) + handMatcher.group(4)+handMatcher.group(5)+"/"+handMatcher.group(6) + " " + handMatcher.group(7) + handMatcher.group(8) + handMatcher.group(9));
-
                 }
+                System.out.println(line);
+                System.out.println("jaahas");
                 if (seatMatcher.matches()){
+                    System.out.println("joo");
                     System.out.println("Seat " + seatMatcher.group(1) + ": " +trim(seatMatcher.group(2)) + " (" + seatMatcher.group(3) + seatMatcher.group(4) + ")");
                     String name = seatMatcher.group(2);
                     if (seatMatcher.group(1).equals("1")) {
@@ -77,11 +85,37 @@ public class Main {
                         players.put(name, player);
                     }
                 }
+
                 if (turnMatcher.matches()){
+
                     Turn turn = Turn.valueOf(trim(turnMatcher.group(1)));
                     switch (turn){
+
                         case HOLECARDS:
+                            line = queue.take();
+                            turnMatcher = turnPattern.matcher(line);
+                            while(!turnMatcher.matches()) {
+
+                                Matcher actionMatcher = actionPattern.matcher(line);
+
+                                if (actionMatcher.matches()) {
+                                    String name = actionMatcher.group(1);
+                                    String foldraise = actionMatcher.group(2);
+
+                                    if (name.equals(buttonname)) {
+                                        System.out.println(name+"  " +foldraise);
+                                        players.get(name).button(foldraise);
+                                    } else {
+                                        players.get(name).hand_append(foldraise);
+                                    }
+                                }
+                                line = queue.take();
+                                turnMatcher = turnPattern.matcher(line);
+
+                            }
+
                             break;
+
                         case FLOP:
                             System.out.println("FLOP: " + turnMatcher.group(2));
                             break;
@@ -99,45 +133,7 @@ public class Main {
                             break;
                     }
                 }
-                /*
-                if (line.contains("Seat") && line.contains(":") && line.contains("chips")) {
-                    String[] row = line.split("\\(");
-                    String name = row[0].split(":")[1];
-                    name = name.substring(1, name.length() -1);
-                    if (row[0].split(":")[0].equals("Seat 1")) {
-                        buttonname = name;
-                    }
 
-
-                    if (!players.keySet().contains(name)) {
-                        Player player = new Player(name);
-                        players.put(name, player);
-                    }
-                }
-                //Starts to handle preflop actions and stops when detects line which contains ***FLOP***
-                if (line.contains("*** HOLE CARDS ***")) {
-
-
-                    while (!line.contains("*** FLOP ***") && !line.contains("*** SUMMARY ***")) {
-
-                        line = queue.take();
-                        if (!line.contains(":") || line.contains("doesn't")) {
-                            continue;
-                        }
-
-                        String[] lista = line.split(":");
-                        String name = lista[0];
-                        String[] list2 = lista[1].split(" ");
-                        String foldraise = list2[1];
-                        if (name.equals(buttonname)) {
-                            players.get(name).button(foldraise);
-                        } else {
-                            players.get(name).hand_append(foldraise);
-                        }
-
-                    }
-                }
-                */
 
             } catch (InterruptedException e) {
 

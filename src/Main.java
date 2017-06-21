@@ -14,7 +14,8 @@ public class Main {
     //Matches 'PokerStars Zoom Hand #171235037798:  Hold'em No Limit ($0.01/$0.02) - 2017/06/02 5:35:03 ET'
     static Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+)\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+)");
     //Matches 'Seat 1: hirsch262 ($2.10 in chips)"
-    static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)+\\s+\\(([$|€|£])(\\S+).in.chips\\).");
+    static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(\\S+).in.chips\\).");
+
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
     static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
@@ -69,11 +70,10 @@ public class Main {
                     System.out.println(handMatcher.group(1) + handMatcher.group(2) + " " + handMatcher.group(3) + handMatcher.group(4)+handMatcher.group(5)+"/"+handMatcher.group(6) + " " + handMatcher.group(7) + handMatcher.group(8) + handMatcher.group(9));
                 }
                 System.out.println(line);
-                System.out.println("jaahas");
+
                 if (seatMatcher.matches()){
-                    System.out.println("joo");
                     System.out.println("Seat " + seatMatcher.group(1) + ": " +trim(seatMatcher.group(2)) + " (" + seatMatcher.group(3) + seatMatcher.group(4) + ")");
-                    String name = seatMatcher.group(2);
+                    String name = trim(seatMatcher.group(2));
                     if (seatMatcher.group(1).equals("1")) {
                         buttonname = name;
                         System.out.println(buttonname);
@@ -85,6 +85,7 @@ public class Main {
                         players.put(name, player);
                     }
                 }
+
 
                 if (turnMatcher.matches()){
 

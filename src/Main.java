@@ -1,5 +1,6 @@
 import org.apache.commons.io.input.Tailer;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.concurrent.BlockingQueue;
@@ -9,21 +10,16 @@ import java.util.regex.Pattern;
 
 
 public class Main {
-
-    //Pls tehkää joku paremmat
     //Matches 'PokerStars Zoom Hand #171235037798:  Hold'em No Limit ($0.01/$0.02) - 2017/06/02 5:35:03 ET'
     static Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+)\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+)");
     //Matches 'Seat 1: hirsch262 ($2.10 in chips)"
-    static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(\\S+).in.chips\\).");
-
+    static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(.+).");
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
     static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
     static Pattern actionPattern = Pattern.compile("(\\w+):.(folds|calls|bets|raises).{0,20}");
-    //Matches calling
 
-
-    public enum Turn{
+    public enum Phase{
         HOLECARDS,FLOP,TURN,RIVER,SHOWDOWN,SUMMARY
     }
 
@@ -58,27 +54,36 @@ public class Main {
     private static void handle(){
         Map<String, Player> players = new HashMap<>();
         String buttonname = "";
+        long handid = 0;
+        String phasestring = "";
+        ArrayList<Turn> current = new ArrayList<>();
+        ArrayList<Turn> turns = new ArrayList<>();
+
+
         while (true){
             try {
                 String line = queue.take();
-
+                System.out.println(line);
                 Matcher handMatcher = handPattern.matcher(line);
                 Matcher seatMatcher = seatPattern.matcher(line);
                 Matcher turnMatcher =  turnPattern.matcher(line);
+                Matcher actionMatcher = actionPattern.matcher(line);
 
                 if(handMatcher.matches()){
-                    System.out.println(handMatcher.group(1) + handMatcher.group(2) + " " + handMatcher.group(3) + handMatcher.group(4)+handMatcher.group(5)+"/"+handMatcher.group(6) + " " + handMatcher.group(7) + handMatcher.group(8) + handMatcher.group(9));
-                }
-                System.out.println(line);
+                    System.out.println(handMatcher.group(1) + handMatcher.group(2) + handMatcher.group(3) + handMatcher.group(4)+handMatcher.group(5)+"/"+handMatcher.group(6) + " " + handMatcher.group(7) + handMatcher.group(8) + handMatcher.group(9));
+                    handid = Long.parseLong(trim(handMatcher.group(2)));
+                    phasestring = "";
 
-                if (seatMatcher.matches()){
-                    System.out.println("Seat " + seatMatcher.group(1) + ": " +trim(seatMatcher.group(2)) + " (" + seatMatcher.group(3) + seatMatcher.group(4) + ")");
+                }
+
+                if(seatMatcher.matches()){
+
+
                     String name = trim(seatMatcher.group(2));
                     if (seatMatcher.group(1).equals("1")) {
                         buttonname = name;
                         System.out.println(buttonname);
                     }
-
 
                     if (!players.keySet().contains(name)) {
                         Player player = new Player(name);
@@ -86,45 +91,55 @@ public class Main {
                     }
                 }
 
+                if(actionMatcher.matches()) {
+                    if (phasestring.equals("HOLECARDS")) {
+                        String name = trim(actionMatcher.group(1));
+                        String foldraise = actionMatcher.group(2);
 
-                if (turnMatcher.matches()){
+                        if (name.equals(buttonname)) {
+                            System.out.println(name + "  " + foldraise);
+                            players.get(name).button(foldraise);
+                        } else {
+                            players.get(name).hand_append(foldraise);
+                        }
 
-                    Turn turn = Turn.valueOf(trim(turnMatcher.group(1)));
-                    switch (turn){
+                    } else {
+                        String name = actionMatcher.group(1);
+                        String foldraise = actionMatcher.group(2);
+                        current.get(0).AddAction(name, foldraise);
+                    }
+
+                }
+
+
+                if(turnMatcher.matches()){
+                    Phase phase = Phase.valueOf(trim(turnMatcher.group(1)));
+
+                    switch (phase){
 
                         case HOLECARDS:
-                            line = queue.take();
-                            turnMatcher = turnPattern.matcher(line);
-                            while(!turnMatcher.matches()) {
-
-                                Matcher actionMatcher = actionPattern.matcher(line);
-
-                                if (actionMatcher.matches()) {
-                                    String name = actionMatcher.group(1);
-                                    String foldraise = actionMatcher.group(2);
-
-                                    if (name.equals(buttonname)) {
-                                        System.out.println(name+"  " +foldraise);
-                                        players.get(name).button(foldraise);
-                                    } else {
-                                        players.get(name).hand_append(foldraise);
-                                    }
-                                }
-                                line = queue.take();
-                                turnMatcher = turnPattern.matcher(line);
-
-                            }
-
+                            phasestring = "HOLECARDS";
                             break;
-
                         case FLOP:
-                            System.out.println("FLOP: " + turnMatcher.group(2));
+                            phasestring = "FLOP";
+                            Turn flop = new Turn("FLOP", handid);
+                            current.clear();
+                            current.add(flop);
+                            turns.add(flop);
                             break;
                         case TURN:
-                            System.out.println("TURN: " + turnMatcher.group(2) + ", "+ turnMatcher.group(3));
+                            phasestring = "TURN";
+                            Turn turn = new Turn("TURN", handid);
+                            current.clear();
+                            current.add(turn);
+                            turns.add(turn);
                             break;
                         case RIVER:
-                            System.out.println("RIVER: " + turnMatcher.group(2) + ", "+ turnMatcher.group(3));
+                            phasestring = "RIVER";
+                            Turn river = new Turn("RIVER", handid);
+                            current.clear();
+                            current.add(river);
+                            turns.add(river);
                             break;
                         case SHOWDOWN:
                             System.out.println("SHOWDOWN");
@@ -134,8 +149,6 @@ public class Main {
                             break;
                     }
                 }
-
-
             } catch (InterruptedException e) {
 
                 e.printStackTrace();

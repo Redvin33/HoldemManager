@@ -27,7 +27,7 @@ public class Game implements Runnable{
     public static Pattern actionPattern = Pattern.compile("(\\w+):.(folds|calls|bets|raises).{0,20}");
 
     //LinkedQueue due to undetermined size, stores rows from logFile.
-    private static BlockingQueue<String> queue = new LinkedBlockingQueue();
+    private BlockingQueue<String> queue = new LinkedBlockingQueue();
     private Tailer logTailer;
     private Boolean running = true;
 

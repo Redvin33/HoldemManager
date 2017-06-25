@@ -6,6 +6,11 @@ import java.util.ArrayList;
 import java.util.Vector;
 
 public class Turn {
+
+    public enum Phase{
+        HOLECARDS,FLOP,TURN,RIVER,SHOWDOWN,SUMMARY
+    }
+
     String tyyppi;
     Vector<Action> actions;
     long handid;

@@ -13,10 +13,7 @@ import org.apache.commons.io.input.Tailer;
  */
 public class Game implements Runnable{
 
-    public enum Phase{
-        HOLECARDS,FLOP,TURN,RIVER,SHOWDOWN,SUMMARY
-    }
-
+    //todo Better regex x4
     //Matches 'PokerStars Zoom Hand #171235037798:  Hold'em No Limit ($0.01/$0.02) - 2017/06/02 5:35:03 ET'
     public static Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+)\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+)");
     //Matches 'Seat 1: hirsch262 ($2.10 in chips)"
@@ -28,8 +25,8 @@ public class Game implements Runnable{
 
     //LinkedQueue due to undetermined size, stores rows from logFile.
     private BlockingQueue<String> queue = new LinkedBlockingQueue();
-    private Tailer logTailer;
     private Boolean running = true;
+    private Tailer logTailer;
 
     public Game(String logFile){
         this.logTailer = new Tailer( new File(logFile), new LogListener(queue),1000 ,false);
@@ -107,7 +104,7 @@ public class Game implements Runnable{
 
 
                 if(turnMatcher.matches()){
-                    Phase phase = Game.Phase.valueOf(Helper.trim(turnMatcher.group(1)));
+                    Turn.Phase phase = Turn.Phase.valueOf(Helper.trim(turnMatcher.group(1)));
 
                     switch (phase){
 

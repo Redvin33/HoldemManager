@@ -3,17 +3,18 @@
  */
 
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class Turn {
     String tyyppi;
-    ArrayList<Action> actions;
+    Vector<Action> actions;
     long handid;
 
     public Turn(String tyyppi_, long handid_) {
         this.tyyppi = tyyppi_;
-        this.actions = new ArrayList<>();
+        this.actions = new Vector<>();
         this.handid = handid_;
-        System.out.println("Created " + tyyppi + " with ID " + handid+ "!!!!!");
+        System.out.println("Created " + tyyppi + " with ID " + handid);
     }
 
 
@@ -28,8 +29,18 @@ public class Turn {
         Action action = new Action(player, action_);
         actions.add(action);
         System.out.println("Added action: " + player +" " + action_ + " to " + tyyppi +" " + handid );
+
+
+
         return;
     }
 
+    public void printActions() {
+        System.out.println(handid+ " " + tyyppi);
+        for (Action move : actions) {
+            move.print();
+        }
+        System.out.println('\n');
+    }
 
 }

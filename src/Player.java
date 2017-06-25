@@ -25,7 +25,12 @@ public class Player {
 
     public float raiseprcnt() { return ((raises/hands)*100); }
 
-    public double buttonraise() { return ((double)buttonraises/(double)buttons)*100;}
+    public double buttonraise() {
+        if (buttons == 0) {
+            return 0.0;
+        }
+        return ((double)buttonraises/(double)buttons)*100;
+    }
 
     public void button(String tyyppi) {
         buttons += 1;
@@ -42,7 +47,7 @@ public class Player {
         } else if (tyyppi.equals("raises")) {
             raises += 1;
         }
-        System.out.println(name + " fold-%.: " + fldprcnt() +"  hands: " + hands +" folds: " + folds + " buttonraise: " + buttonraise() + "buttons: " + buttons);
+        System.out.println(name + " fold-%.: " + fldprcnt() +"  hands: " + hands +" folds: " + folds + " buttonraise: " + buttonraise() + " buttons: " + buttons);
     }
 
 

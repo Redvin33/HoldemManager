@@ -20,11 +20,11 @@ public class Game implements Runnable{
     //Matches 'PokerStars Zoom Hand #171235037798:  Hold'em No Limit ($0.01/$0.02) - 2017/06/02 5:35:03 ET'
     public static Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+)\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+)");
     //Matches 'Seat 1: hirsch262 ($2.10 in chips)"
-    public static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(.+).");
+    public static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(\\S+).in.chips\\)");
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
     public static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
-    public static Pattern actionPattern = Pattern.compile("(\\w+):.(folds|calls|bets|raises).{0,20}");
+    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).{0,60}");
 
     //LinkedQueue due to undetermined size, stores rows from logFile.
     private BlockingQueue<String> queue = new LinkedBlockingQueue();
@@ -54,7 +54,7 @@ public class Game implements Runnable{
         while (running){
             try {
                 String line = queue.take();
-                System.out.println(line);
+
                 Matcher handMatcher = handPattern.matcher(line);
                 Matcher seatMatcher = seatPattern.matcher(line);
                 Matcher turnMatcher =  turnPattern.matcher(line);
@@ -64,6 +64,9 @@ public class Game implements Runnable{
                     System.out.println(handMatcher.group(1) + handMatcher.group(2) + handMatcher.group(3) + handMatcher.group(4)+handMatcher.group(5)+"/"+handMatcher.group(6) + " " + handMatcher.group(7) + handMatcher.group(8) + handMatcher.group(9));
                     handid = Long.parseLong(Helper.trim(handMatcher.group(2)));
                     phasestring = "";
+                    for (Turn turn : turns) {
+                        turn.printActions();
+                    }
 
                 }
 

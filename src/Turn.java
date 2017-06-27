@@ -12,12 +12,12 @@ public class Turn {
     }
 
     String tyyppi;
-    Vector<Action> actions;
+    ArrayList<Action> actions;
     long handid;
 
     public Turn(String tyyppi_, long handid_) {
         this.tyyppi = tyyppi_;
-        this.actions = new Vector<>();
+        this.actions = new ArrayList<>();
         this.handid = handid_;
         System.out.println("Created " + tyyppi + " with ID " + handid);
     }

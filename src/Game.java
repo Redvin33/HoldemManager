@@ -8,7 +8,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.io.input.Tailer;
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  * Created by Jukka on 25.6.2017.
@@ -45,7 +45,7 @@ public class Game implements Runnable{
         Map<String, Player> players = new HashMap<>();
         String buttonname = "";
         String phasestring = "";
-        Vector<Turn> current = new Vector<>();
+        ArrayList<Turn> current = new ArrayList<>();
         ArrayList<Turn> turns = new ArrayList<>();
         ArrayList<Hand> hands = new ArrayList<>();
 
@@ -74,7 +74,7 @@ public class Game implements Runnable{
 
                     if (turns.size() >= 3) {
                         try {
-                            Vector<Turn> parameter = new Vector<>();
+                            ArrayList<Turn> parameter = new ArrayList<>();
                             for (Turn turn : current ) {
                                 parameter.add(turn);
                             }

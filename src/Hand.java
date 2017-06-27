@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Currency;
 import java.util.Date;
 import java.util.TimeZone;
-import java.util.Vector;
+import java.util.ArrayList;
 
 /**
  * Created by Jukka on 25.6.2017.
@@ -18,10 +18,10 @@ public class Hand {
     private double minStake;
     private double maxStake;
     private Date date;
-    private Vector<Turn> turns;
+    private ArrayList<Turn> turns;
     private ArrayList<Player> players;
 
-    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, Vector<Turn> turns) throws ParseException{
+    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, ArrayList<Turn> turns) throws ParseException{
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;

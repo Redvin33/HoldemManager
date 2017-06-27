@@ -8,7 +8,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.io.input.Tailer;
-import java.util.ArrayList;
+
 
 /**
  * Created by Jukka on 25.6.2017.
@@ -18,6 +18,8 @@ public class Game implements Runnable{
     //todo Better regex x4
     //Matches 'PokerStars Zoom Hand #171235037798:  Hold'em No Limit ($0.01/$0.02) - 2017/06/02 5:35:03 ET'
     public static Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+)\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+)");
+    //Matches 'Table 'McNaught' 9-max Seat #1 is the button
+    public static Pattern tablePattern = Pattern.compile("Table.['](.+)['].(\\d+)(.+)");
     //Matches 'Seat 1: hirsch262 ($2.10 in chips)"
     public static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(\\S+).in.chips\\)");
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
@@ -58,6 +60,8 @@ public class Game implements Runnable{
         double maxStake = 0;
         String date = "";
         String timezone = "";
+        Table table = new Table("Default", 0);
+
 
 
         while (running){
@@ -65,6 +69,7 @@ public class Game implements Runnable{
                 String line = queue.take();
 
                 Matcher handMatcher = handPattern.matcher(line);
+                Matcher tableMatcher = tablePattern.matcher(line);
                 Matcher seatMatcher = seatPattern.matcher(line);
                 Matcher turnMatcher =  turnPattern.matcher(line);
                 Matcher actionMatcher = actionPattern.matcher(line);
@@ -78,7 +83,7 @@ public class Game implements Runnable{
                             for (Turn turn : current ) {
                                 parameter.add(turn);
                             }
-                            Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, parameter);
+                            Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, parameter, table);
                             current.clear();
                             System.out.println("Created hand " + hand);
                             hand.printActions();
@@ -88,6 +93,7 @@ public class Game implements Runnable{
                             e.printStackTrace();
                         }
                     }
+
                     handName = handMatcher.group(1);
                     handid = Long.parseLong(handMatcher.group(2));
                     gameMode = handMatcher.group(3);
@@ -101,10 +107,15 @@ public class Game implements Runnable{
 
                 }
 
+                else if (tableMatcher.matches()) {
+                    int playerAmount = Integer.parseInt(tableMatcher.group(2));
+                    table = new Table(tableMatcher.group(1), playerAmount);
+                }
+
                 else if(seatMatcher.matches()){
-
-
+                    int seatNumber = Integer.parseInt(seatMatcher.group(1));
                     String name = Helper.trim(seatMatcher.group(2));
+
                     if (seatMatcher.group(1).equals("1")) {
                         buttonname = name;
                         System.out.println(buttonname);
@@ -114,6 +125,7 @@ public class Game implements Runnable{
                         Player player = new Player(name);
                         players.put(name, player);
                     }
+                    table.addSeat(players.get(name), seatNumber);
                 }
 
                 else if(actionMatcher.matches()) {

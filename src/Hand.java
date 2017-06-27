@@ -20,14 +20,15 @@ public class Hand {
     private Date date;
     private ArrayList<Turn> turns;
     private ArrayList<Player> players;
-
-    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, ArrayList<Turn> turns) throws ParseException{
+    private Table table;
+    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, ArrayList<Turn> turns, Table table) throws ParseException{
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;
         this.minStake = minStake;
         this.maxStake = maxStake;
         this.turns = turns;
+        this.table = table;
         //Symbols are converted into currency code.
         switch (currency){
             case "$":

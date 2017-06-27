@@ -17,7 +17,9 @@ public class Action {
         return action;
     }
 
-    public void print() { System.out.println(player +" " + action);}
+    public void print() { System.out.println(player +" " + action);
+        return;
+    }
 
 
 }

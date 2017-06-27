@@ -1,4 +1,5 @@
 import java.io.File;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.apache.commons.io.input.Tailer;
+import java.util.Vector;
 
 /**
  * Created by Jukka on 25.6.2017.
@@ -42,10 +44,20 @@ public class Game implements Runnable{
         new Thread(logTailer).start();
         Map<String, Player> players = new HashMap<>();
         String buttonname = "";
-        long handid = 0;
         String phasestring = "";
-        ArrayList<Turn> current = new ArrayList<>();
+        Vector<Turn> current = new Vector<>();
         ArrayList<Turn> turns = new ArrayList<>();
+        ArrayList<Hand> hands = new ArrayList<>();
+
+        //Variables for creating hand
+        String handName ="";
+        long handid = 0;
+        String gameMode ="";
+        String currency ="";
+        double minStake = 0;
+        double maxStake = 0;
+        String date = "";
+        String timezone = "";
 
 
         while (running){
@@ -56,18 +68,40 @@ public class Game implements Runnable{
                 Matcher seatMatcher = seatPattern.matcher(line);
                 Matcher turnMatcher =  turnPattern.matcher(line);
                 Matcher actionMatcher = actionPattern.matcher(line);
+                System.out.println("LINE: " + line);
 
                 if(handMatcher.matches()){
-                    System.out.println(handMatcher.group(1) + handMatcher.group(2) + handMatcher.group(3) + handMatcher.group(4)+handMatcher.group(5)+"/"+handMatcher.group(6) + " " + handMatcher.group(7) + handMatcher.group(8) + handMatcher.group(9));
-                    handid = Long.parseLong(Helper.trim(handMatcher.group(2)));
-                    phasestring = "";
-                    for (Turn turn : turns) {
-                        turn.printActions();
+
+                    if (turns.size() >= 3) {
+                        try {
+                            Vector<Turn> parameter = new Vector<>();
+                            for (Turn turn : current ) {
+                                parameter.add(turn);
+                            }
+                            Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, parameter);
+                            current.clear();
+                            System.out.println("Created hand " + hand);
+                            hand.printActions();
+                            hands.add(hand);
+
+                        } catch (ParseException e) {
+                            e.printStackTrace();
+                        }
                     }
+                    handName = handMatcher.group(1);
+                    handid = Long.parseLong(handMatcher.group(2));
+                    gameMode = handMatcher.group(3);
+                    currency = handMatcher.group(4);
+                    minStake = Double.parseDouble(handMatcher.group(5));
+                    maxStake = Double.parseDouble(handMatcher.group(6));
+                    date = handMatcher.group(7) +" " + handMatcher.group(8);
+                    timezone = handMatcher.group(9);
+                    phasestring = "";
+
 
                 }
 
-                if(seatMatcher.matches()){
+                else if(seatMatcher.matches()){
 
 
                     String name = Helper.trim(seatMatcher.group(2));
@@ -82,7 +116,7 @@ public class Game implements Runnable{
                     }
                 }
 
-                if(actionMatcher.matches()) {
+                else if(actionMatcher.matches()) {
                     if (phasestring.equals("HOLECARDS")) {
                         String name = Helper.trim(actionMatcher.group(1));
                         String foldraise = actionMatcher.group(2);
@@ -97,13 +131,13 @@ public class Game implements Runnable{
                     } else {
                         String name = actionMatcher.group(1);
                         String foldraise = actionMatcher.group(2);
-                        current.get(0).AddAction(name, foldraise);
+                        current.get(current.size()-1).AddAction(name, foldraise);
                     }
 
                 }
 
 
-                if(turnMatcher.matches()){
+                else if(turnMatcher.matches()){
                     Turn.Phase phase = Turn.Phase.valueOf(Helper.trim(turnMatcher.group(1)));
 
                     switch (phase){
@@ -114,21 +148,18 @@ public class Game implements Runnable{
                         case FLOP:
                             phasestring = "FLOP";
                             Turn flop = new Turn("FLOP", handid);
-                            current.clear();
                             current.add(flop);
                             turns.add(flop);
                             break;
                         case TURN:
                             phasestring = "TURN";
                             Turn turn = new Turn("TURN", handid);
-                            current.clear();
                             current.add(turn);
                             turns.add(turn);
                             break;
                         case RIVER:
                             phasestring = "RIVER";
                             Turn river = new Turn("RIVER", handid);
-                            current.clear();
                             current.add(river);
                             turns.add(river);
                             break;
@@ -140,6 +171,8 @@ public class Game implements Runnable{
                             break;
                     }
                 }
+
+
             } catch (InterruptedException e) {
 
                 e.printStackTrace();

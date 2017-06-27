@@ -34,18 +34,15 @@ public class Turn {
         Action action = new Action(player, action_);
         actions.add(action);
         System.out.println("Added action: " + player +" " + action_ + " to " + tyyppi +" " + handid );
-
-
-
         return;
     }
 
     public void printActions() {
         System.out.println(handid+ " " + tyyppi);
-        for (Action move : actions) {
-            move.print();
+        for (Action action : actions) {
+            action.print();
         }
-        System.out.println('\n');
+        return;
     }
 
 }

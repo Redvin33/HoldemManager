@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Currency;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.Vector;
 
 /**
  * Created by Jukka on 25.6.2017.
@@ -11,20 +12,22 @@ import java.util.TimeZone;
 public class Hand {
 
     private String handName;
-    private double id;
+    private long id;
     private String gameMode;
     private Currency currency;
     private double minStake;
     private double maxStake;
     private Date date;
-    private ArrayList<Turn> turns;
+    private Vector<Turn> turns;
+    private ArrayList<Player> players;
 
-    public Hand(String handName, double id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone) throws ParseException{
+    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, Vector<Turn> turns) throws ParseException{
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;
         this.minStake = minStake;
         this.maxStake = maxStake;
+        this.turns = turns;
         //Symbols are converted into currency code.
         switch (currency){
             case "$":
@@ -48,10 +51,20 @@ public class Hand {
                 break;
         }
         this.date = format.parse(date);
+
+
+    }
+
+    public void printActions() {
+
+        for(Turn turn : turns) {
+            turn.printActions();
+        }
+
     }
 
     @Override
     public String toString() {
-        return handName + " #" + id + ", " + gameMode + ": ("+currency+minStake+"/"+maxStake+") " + date;
+        return handName + " #" + id + ", " + gameMode + ": ("+currency+" "+minStake+"/"+maxStake+") " + date;
     }
 }

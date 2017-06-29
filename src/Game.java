@@ -50,7 +50,7 @@ public class Game implements Runnable{
         ArrayList<Turn> current = new ArrayList<>();
         ArrayList<Turn> turns = new ArrayList<>();
         ArrayList<Hand> hands = new ArrayList<>();
-
+        ArrayList<Player> curr_players = new ArrayList<>();
         //Variables for creating hand
         String handName ="";
         long handid = 0;
@@ -83,8 +83,14 @@ public class Game implements Runnable{
                             for (Turn turn : current ) {
                                 parameter.add(turn);
                             }
-                            Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, parameter, table);
+                            ArrayList<Player> players_param = new ArrayList<>();
+                            for (Player player: curr_players) {
+                                players_param.add(player);
+                            }
+
+                            Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, parameter, table, players_param);
                             current.clear();
+                            curr_players.clear();
                             System.out.println("Created hand " + hand);
                             hand.printActions();
                             hands.add(hand);
@@ -126,6 +132,8 @@ public class Game implements Runnable{
                         players.put(name, player);
                     }
                     table.addSeat(players.get(name), seatNumber);
+                    curr_players.add(players.get(name));
+
                 }
 
                 else if(actionMatcher.matches()) {

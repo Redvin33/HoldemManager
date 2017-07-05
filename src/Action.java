@@ -4,6 +4,9 @@
 public class Action {
     private String player;
     private String action;
+
+
+
     private double amount;
 
     public Action(String player_, String action_) {
@@ -18,6 +21,8 @@ public class Action {
     public String getAction() {
         return action;
     }
+
+    public double getAmount() { return amount; }
 
     public void print() { System.out.println(player +" " + action);
         return;

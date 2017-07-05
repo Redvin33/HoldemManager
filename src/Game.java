@@ -26,7 +26,9 @@ public class Game implements Runnable{
     public static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
     public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).{0,60}");
+    //Matches cards
 
+    public static Pattern cardPattern = Pattern.compile("\\[(\\S+)*?\\].(\\[(\\S+)\\])*?");
     //LinkedQueue due to undetermined size, stores rows from logFile.
     private BlockingQueue<String> queue = new LinkedBlockingQueue();
     private Boolean running = true;
@@ -47,10 +49,10 @@ public class Game implements Runnable{
         Map<String, Player> players = new HashMap<>();
         String buttonname = "";
         String phasestring = "";
-        ArrayList<Turn> current = new ArrayList<>();
+
         ArrayList<Turn> turns = new ArrayList<>();
         ArrayList<Hand> hands = new ArrayList<>();
-        ArrayList<Player> curr_players = new ArrayList<>();
+
         //Variables for creating hand
         String handName ="";
         long handid = 0;
@@ -61,6 +63,8 @@ public class Game implements Runnable{
         String date = "";
         String timezone = "";
         Table table = new Table("Default", 0);
+        ArrayList<Player> curr_players = new ArrayList<>();
+        ArrayList<Turn> current = new ArrayList<>();
 
 
 
@@ -79,16 +83,16 @@ public class Game implements Runnable{
 
                     if (turns.size() >= 3) {
                         try {
-                            ArrayList<Turn> parameter = new ArrayList<>();
+                            ArrayList<Turn> turns_param = new ArrayList<>();
                             for (Turn turn : current ) {
-                                parameter.add(turn);
+                                turns_param.add(turn);
                             }
                             ArrayList<Player> players_param = new ArrayList<>();
                             for (Player player: curr_players) {
                                 players_param.add(player);
                             }
 
-                            Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, parameter, table, players_param);
+                            Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, turns_param, table, players_param);
                             current.clear();
                             curr_players.clear();
                             System.out.println("Created hand " + hand);
@@ -158,30 +162,65 @@ public class Game implements Runnable{
 
 
                 else if(turnMatcher.matches()){
+                    ArrayList<Card> cards = new ArrayList<>();
                     Turn.Phase phase = Turn.Phase.valueOf(Helper.trim(turnMatcher.group(1)));
+                    String crds = "";
+                    if (turnMatcher.group(2) != null) {
+                        crds = turnMatcher.group(2);
+                        System.out.println("testi");
+                    }
+                    System.out.println("KORTIT: " +crds);
+
 
                     switch (phase){
 
                         case HOLECARDS:
                             phasestring = "HOLECARDS";
                             break;
+
                         case FLOP:
                             phasestring = "FLOP";
-                            Turn flop = new Turn("FLOP", handid);
+                            String[] card_src = crds.split(" ");
+
+                           for(String s: card_src) {
+                               Card card = new Card(s);
+                               cards.add(card);
+                           }
+
+
+                            Turn flop = new Turn("FLOP", handid, cards);
                             current.add(flop);
                             turns.add(flop);
+                            flop.printCards();
                             break;
                         case TURN:
                             phasestring = "TURN";
-                            Turn turn = new Turn("TURN", handid);
+                            card_src = crds.split(" ");
+
+                            for(String s: card_src) {
+                                Card card = new Card(s);
+                                cards.add(card);
+                            }
+
+                            Turn turn = new Turn("TURN", handid, cards);
                             current.add(turn);
                             turns.add(turn);
+                            turn.printCards();
                             break;
                         case RIVER:
                             phasestring = "RIVER";
-                            Turn river = new Turn("RIVER", handid);
+                            card_src = crds.split(" ");
+
+                            for(String s: card_src) {
+                                Card card = new Card(s);
+                                cards.add(card);
+                            }
+
+
+                            Turn river = new Turn("RIVER", handid, cards);
                             current.add(river);
                             turns.add(river);
+                            river.printCards();
                             break;
                         case SHOWDOWN:
                             System.out.println("SHOWDOWN");

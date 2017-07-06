@@ -1,6 +1,6 @@
 
 public class Player {
-    String name;
+    public String name;
     int hands;
     int folds;
     int raises;
@@ -50,5 +50,8 @@ public class Player {
         System.out.println(name + " fold-%.: " + fldprcnt() +"  hands: " + hands +" folds: " + folds + " buttonraise: " + buttonraise() + " buttons: " + buttons);
     }
 
+    public String getName() {
+        return name;
+    }
 
 }

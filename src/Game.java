@@ -26,9 +26,10 @@ public class Game implements Runnable{
     public static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
     public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).{0,60}");
-    //Matches cards
+    //Matches holecards
+    public static Pattern holecardsPattern = Pattern.compile("(Seat.\\d+:|.+:|.*).?(.*)(shows|mucked|Dealt.to).(.*)\\[(.*)\\]");
 
-    public static Pattern cardPattern = Pattern.compile("\\[(\\S+)*?\\].(\\[(\\S+)\\])*?");
+    public static Pattern muckedcardsPattern = Pattern.compile("Seat.\\d+:.(.+)\\((button|small blind|big blind)\\).mucked.\\[(.*)\\]");
     //LinkedQueue due to undetermined size, stores rows from logFile.
     private BlockingQueue<String> queue = new LinkedBlockingQueue();
     private Boolean running = true;
@@ -63,7 +64,7 @@ public class Game implements Runnable{
         String date = "";
         String timezone = "";
         Table table = new Table("Default", 0);
-        ArrayList<Player> curr_players = new ArrayList<>();
+        HashMap<Player, ArrayList<Card>> curr_players = new HashMap<Player, ArrayList<Card>>();
         ArrayList<Turn> current = new ArrayList<>();
 
 
@@ -77,6 +78,8 @@ public class Game implements Runnable{
                 Matcher seatMatcher = seatPattern.matcher(line);
                 Matcher turnMatcher =  turnPattern.matcher(line);
                 Matcher actionMatcher = actionPattern.matcher(line);
+                Matcher holecardMatcher = holecardsPattern.matcher(line);
+                Matcher muckedMatcher = muckedcardsPattern.matcher(line);
                 System.out.println("LINE: " + line);
 
                 if(handMatcher.matches()){
@@ -87,12 +90,16 @@ public class Game implements Runnable{
                             for (Turn turn : current ) {
                                 turns_param.add(turn);
                             }
-                            ArrayList<Player> players_param = new ArrayList<>();
-                            for (Player player: curr_players) {
-                                players_param.add(player);
+                            HashMap<Player, ArrayList<Card>> players_param = new HashMap<>();
+                            for (Player player: curr_players.keySet()) {
+                                players_param.put(player, curr_players.get(player));
+                            }
+                            for (Player player: players_param.keySet()) {
+                                System.out.println(player);
                             }
 
                             Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, turns_param, table, players_param);
+                            hand.printStartingHands();
                             current.clear();
                             curr_players.clear();
                             System.out.println("Created hand " + hand);
@@ -124,7 +131,7 @@ public class Game implements Runnable{
 
                 else if(seatMatcher.matches()){
                     int seatNumber = Integer.parseInt(seatMatcher.group(1));
-                    String name = Helper.trim(seatMatcher.group(2));
+                    String name = seatMatcher.group(2).trim();
 
                     if (seatMatcher.group(1).equals("1")) {
                         buttonname = name;
@@ -136,13 +143,18 @@ public class Game implements Runnable{
                         players.put(name, player);
                     }
                     table.addSeat(players.get(name), seatNumber);
-                    curr_players.add(players.get(name));
+                    ArrayList<Card> holecards = new ArrayList<>();
+                    Card card1 = new Card("?");
+                    Card card2 = new Card("?");
+                    holecards.add(card1);
+                    holecards.add(card2);
+                    curr_players.put(players.get(name), holecards);
 
                 }
 
                 else if(actionMatcher.matches()) {
                     if (phasestring.equals("HOLECARDS")) {
-                        String name = Helper.trim(actionMatcher.group(1));
+                        String name = actionMatcher.group(1).trim();
                         String foldraise = actionMatcher.group(2);
 
                         if (name.equals(buttonname)) {
@@ -167,7 +179,6 @@ public class Game implements Runnable{
                     String crds = "";
                     if (turnMatcher.group(2) != null) {
                         crds = turnMatcher.group(2);
-                        System.out.println("testi");
                     }
                     System.out.println("KORTIT: " +crds);
 
@@ -229,8 +240,58 @@ public class Game implements Runnable{
                             System.out.println("SUMMARY");
                             break;
                     }
+                 }
+
+
+                 else if(muckedMatcher.matches()){
+                    for (int i = 0; i<= muckedMatcher.groupCount(); i++) {
+                        System.out.println(muckedMatcher.group(i));
+                    }
+                    String name = muckedMatcher.group(1).trim();
+                    String cards = muckedMatcher.group(3).trim();
+                    String[] card_src = cards.split(" ");
+                    ArrayList<Card> holecards = new ArrayList<>();
+                    for (String s: card_src) {
+                        Card card = new Card(s);
+                        holecards.add(card);
+                    }
+                    System.out.println("NAME: " +name);
+
+                    curr_players.put(players.get(name), holecards);
+                    System.out.println(curr_players.get(players.get(name.trim())).size());
+
+
                 }
 
+                else if (holecardMatcher.matches()) {
+                    String name;
+                    System.out.println(line +"!!!!!!!!!!!!!!!!!!!!!!");
+                    for (int i = 0; i<= holecardMatcher.groupCount(); i++) {
+                        System.out.println(holecardMatcher.group(i));
+                    }
+                    if(holecardMatcher.group(3).equals("Dealt to" )) {
+                        name = holecardMatcher.group(4);
+                    } else if (holecardMatcher.group(3).equals("mucked")){
+                        name = holecardMatcher.group(2);
+                    } else {
+                        name = holecardMatcher.group(1);
+                    }
+                    String cards = holecardMatcher.group(5);
+                    String[] card_src = cards.split(" ");
+                    ArrayList<Card> holecards = new ArrayList<>();
+                    for (String s: card_src) {
+                        Card card = new Card(s);
+                        System.out.println(s);
+                        holecards.add(card);
+                    }
+                    System.out.println("NAME: " +name.trim());
+
+                    curr_players.put(players.get(name.trim()), holecards);
+                    System.out.println(curr_players.get(players.get(name.trim())).size());
+
+
+
+                }
 
             } catch (InterruptedException e) {
 

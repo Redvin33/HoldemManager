@@ -15,6 +15,6 @@ public class Seat {
     }
 
     public void print() {
-        System.out.println("Seat "+ seatNumber +": "+ player.name + "("+ role +")");
+        System.out.println("Seat "+ seatNumber +": "+ player.getName() + "("+ role +")");
     }
 }

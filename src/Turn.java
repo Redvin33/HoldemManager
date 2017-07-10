@@ -13,12 +13,14 @@ public class Turn {
 
     String tyyppi;
     ArrayList<Action> actions;
+    ArrayList<Card> tablecards;
     long handid;
 
-    public Turn(String tyyppi_, long handid_) {
+    public Turn(String tyyppi_, long handid_, ArrayList<Card> cards) {
         this.tyyppi = tyyppi_;
         this.actions = new ArrayList<>();
         this.handid = handid_;
+        this.tablecards = cards;
         System.out.println("Created " + tyyppi + " with ID " + handid);
     }
 
@@ -30,6 +32,7 @@ public class Turn {
     public long getHandid() {
         return handid;
     }
+
     public void AddAction(String player, String action_) {
         Action action = new Action(player, action_);
         actions.add(action);
@@ -42,6 +45,15 @@ public class Turn {
         for (Action action : actions) {
             action.print();
         }
+        return;
+    }
+
+    public void printCards() {
+        String printed = "";
+        for(Card card: tablecards) {
+            printed = printed.concat("[" + card.getCard() +"] ");
+        }
+        System.out.println(tyyppi+ " " + handid +": " +printed);
         return;
     }
 

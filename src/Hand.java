@@ -1,9 +1,6 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Currency;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
 import java.util.ArrayList;
 
 /**
@@ -19,9 +16,9 @@ public class Hand {
     private double maxStake;
     private Date date;
     private ArrayList<Turn> turns;
-    private ArrayList<Player> players;
+    private HashMap<Player, ArrayList<Card>> players;
     private Table table;
-    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, ArrayList<Turn> turns, Table table) throws ParseException{
+    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, ArrayList<Turn> turns, Table table, HashMap<Player, ArrayList<Card>> players) throws ParseException{
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;
@@ -29,6 +26,7 @@ public class Hand {
         this.maxStake = maxStake;
         this.turns = turns;
         this.table = table;
+        this.players = players;
         //Symbols are converted into currency code.
         switch (currency){
             case "$":
@@ -62,6 +60,14 @@ public class Hand {
             turn.printActions();
         }
 
+    }
+
+    public void printStartingHands() {
+
+        System.out.println("Hand "+ id + " starting hands");
+        for(Player player : players.keySet()) {
+            System.out.println(player.getName() +" ["+players.get(player).get(0).getCard() +"] [" + players.get(player).get(1).getCard()+"]");
+        }
     }
 
     @Override

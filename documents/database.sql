@@ -4,6 +4,19 @@ create table tables(
   primary key(id)
 );
 
+create table seats(
+  id SERIAL,
+  role varchar(20),
+  primary key(id)
+);
+
+create table table_seat(
+  table_id int,
+  seat_id int,
+  foreign key(table_id) references tables(id),
+  foreign key(seat_id) references seats(id)
+);
+
 create table gamemodes(
   id SERIAL,
   gamemode varchar(100),
@@ -25,13 +38,7 @@ create table players(
   primary key(id)
 );
 
-create table seats(
-  id SERIAL,
-  table_id int,
-  role varchar(20),
-  primary key(id),
-  foreign key(table_id) references tables(id)
-);
+
 
 create table hands(
   id SERIAL,
@@ -51,7 +58,7 @@ create table turns(
   phase varchar(50),
   communitycards text[],
   primary key(id),
-  foreign key(hand_id) references hands(id),
+  foreign key(hand_id) references hands(id)
 );
 
 create table hand_player_seat(
@@ -63,7 +70,7 @@ create table hand_player_seat(
   primary key(id),
   foreign key(hand_id) references hands(id),
   foreign key(seat_id) references seats(id),
-  foreign key(player_id) references players(id),
+  foreign key(player_id) references players(id)
 );
 
 create table turn_player_action(
@@ -75,5 +82,5 @@ create table turn_player_action(
   primary key(id),
   foreign key(turn_id) references turns(id),
   foreign key(action_id) references actions(id),
-  foreign key(player_id) references players(id),
+  foreign key(player_id) references players(id)
 );

@@ -13,6 +13,8 @@ create table seats(
 create table table_seat(
   table_id int,
   seat_id int,
+  nro int,
+  primary key(table_id,seat_id,nro),
   foreign key(table_id) references tables(id),
   foreign key(seat_id) references seats(id)
 );
@@ -63,13 +65,13 @@ create table turns(
 
 create table hand_player_seat(
   id SERIAL,
-  seat_id int,
+  seat_nro int,
   hand_id int,
   player_id int,
   cards text[],
   primary key(id),
   foreign key(hand_id) references hands(id),
-  foreign key(seat_id) references seats(id),
+  foreign key(seat_nro) references table_seat(nro),
   foreign key(player_id) references players(id)
 );
 

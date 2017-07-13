@@ -36,7 +36,7 @@ create table actions(
 
 create table players(
   id SERIAL,
-  name varchar(100),
+  name varchar(100) unique,
   primary key(id)
 );
 
@@ -44,7 +44,7 @@ create table hands(
   id SERIAL,
   table_id int,
   gamemode_id int,
-  siteid DOUBLE PRECISION,
+  siteid DOUBLE PRECISION unique,
   name varchar(100),
   date timestamp,
   primary key(id),
@@ -115,6 +115,7 @@ INSERT INTO actions(action) VALUES ('fold');
 INSERT INTO actions(action) VALUES ('call');
 INSERT INTO actions(action) VALUES ('raise');
 INSERT INTO actions(action) VALUES ('check');
+INSERT INTO actions(action) VALUES ('bet');
 
 INSERT into players(name) VALUES ('yakka34');
 INSERT into players(name) VALUES ('Redvin33');

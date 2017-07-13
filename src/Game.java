@@ -28,7 +28,7 @@ public class Game implements Runnable{
     public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).{0,60}");
     //Matches holecards
     public static Pattern holecardsPattern = Pattern.compile("(Seat.\\d+:|.+:|.*).?(.*)(shows|mucked|Dealt.to).(.*)\\[(.*)\\]");
-
+    //Matches holecards for mucked button/SB/BB player
     public static Pattern muckedcardsPattern = Pattern.compile("Seat.\\d+:.(.+)\\((button|small blind|big blind)\\).mucked.\\[(.*)\\]");
     //LinkedQueue due to undetermined size, stores rows from logFile.
     private BlockingQueue<String> queue = new LinkedBlockingQueue();

@@ -3,10 +3,8 @@
     <properties maven-id="org.postgresql:postgresql:42.1.2" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/postgresql-42.1.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/lib/postgresql-42.1.2.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$PROJECT_DIR$/lib/postgresql-42.1.2-javadoc.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/postgresql-42.1.2-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES />

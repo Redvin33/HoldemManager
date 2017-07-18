@@ -3,7 +3,6 @@
     <properties maven-id="commons-io:commons-io:2.5" />
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/commons-io-2.5.jar!/" />
-      <root url="jar://$USER_HOME$/Desktop/postgresql-42.1.1.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/lib/commons-io-2.5-javadoc.jar!/" />

@@ -18,7 +18,7 @@ public class Hand {
     private ArrayList<Turn> turns;
     private HashMap<Player, ArrayList<Card>> players;
     private Table table;
-    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, ArrayList<Turn> turns, Table table, HashMap<Player, ArrayList<Card>> players) throws ParseException{
+    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, Date date, String timezone, ArrayList<Turn> turns, Table table, HashMap<Player, ArrayList<Card>> players) throws ParseException{
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;
@@ -49,7 +49,7 @@ public class Hand {
                 format.setTimeZone(TimeZone.getTimeZone(timezone));
                 break;
         }
-        this.date = format.parse(date);
+        this.date = date;
 
 
     }

@@ -23,6 +23,10 @@ public class Table {
         }
     }
 
+    public String getTableName() {
+        return tableName;
+    }
+
     public void printTable() {
         System.out.println("Created table " + tableName + " with max-player amount " + playerAmount);
         for (Seat seat : seats) {

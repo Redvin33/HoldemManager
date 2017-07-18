@@ -5,24 +5,30 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
-public class Query {
-    public void SQL(String sql)
+public  class Query {
+    public static void SQL(String sql, Connection conn)
     {
-        String url = "jdbc:postgresql://localhost:5432/holdemManager3";
-        String user = "postgres";
-        String password = "";
-        Connection conn = null;
-        try {
-            conn = DriverManager.getConnection(url, user, password);
-            System.out.println("connected to database...");
-            Statement stmt = conn.createStatement();
 
+        try {
+            Statement stmt = conn.createStatement();
             stmt.executeUpdate(sql);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
 
     }
+    public static ResultSet result(String sql, Connection conn) {
+        try {
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql);
+            return rs;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
 }
 
 

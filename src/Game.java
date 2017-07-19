@@ -31,7 +31,7 @@ public class Game implements Runnable{
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
     public static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
-    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).{0,60}");
+    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).?(\\d+\\.\\d+){0,60}");
     //Matches holecards
     public static Pattern holecardsPattern = Pattern.compile("(Seat.\\d+:|.+:|.*).?(.*)(shows|mucked|Dealt.to).(.*)\\[(.*)\\]");
     //Matches holecards for mucked button/SB/BB player
@@ -120,21 +120,7 @@ public class Game implements Runnable{
                             System.out.println("Created hand " + hand);
                             hand.printActions();
                             hands.add(hand);
-                            ResultSet rs = Query.result("Select max(id) from gamemodes;", conn);
-                            ResultSet rs1 = Query.result(" Select max(id) from tables;", conn);
-
-                            try {
-                                rs.next();
-                                rs1.next();
-                                System.out.println("Hand sql");
-                                int gamemode = rs.getInt(1);
-                                int table_id = rs1.getInt(1);
-                                Query.SQL("INSERT into hands(table_name, gamemode_id, siteid, name, date) VALUES('"+table.getTableName() +"', "+gamemode +", " + Long.toString(handid) + ", '" + handMatcher.group(1)+ "', '" + date +"');" , conn);
-
-
-                            } catch(Exception e) {
-                                System.out.println(e.getMessage());
-                            }
+                            hand.Save(conn);
 
                         } catch (ParseException e) {
                             e.printStackTrace();
@@ -158,6 +144,7 @@ public class Game implements Runnable{
                     if (turns.size() == 0) {
                         System.out.println("PEKRLE");
                         Query.SQL("INSERT INTO gamemodes(gamemode, currency, minstake, maxstake) VALUES('"+gameMode.replace("'", "")+"', '" + currency +"', " +minStake +", " +maxStake +");", conn);
+
                     }
 
                 }
@@ -165,7 +152,7 @@ public class Game implements Runnable{
                 else if (tableMatcher.matches()) {
                     int playerAmount = Integer.parseInt(tableMatcher.group(2));
                     table = new Table(tableMatcher.group(1), playerAmount);
-                    Query.SQL("INSERT INTO tables(name) values('"+ tableMatcher.group(1)+"');", conn);
+                    table.Save(conn);
                 }
 
                 else if(seatMatcher.matches()){
@@ -207,7 +194,13 @@ public class Game implements Runnable{
                     } else {
                         String name = actionMatcher.group(1);
                         String foldraise = actionMatcher.group(2);
-                        current.get(current.size()-1).AddAction(name, foldraise);
+                        if (actionMatcher.group(3) != null) {
+                            double i = Double.parseDouble(actionMatcher.group(3));
+                            current.get(current.size()-1).AddAction(name, foldraise, i);
+                        } else {
+                            current.get(current.size()-1).AddAction(name, foldraise, 0);
+                        }
+
                     }
 
                 }
@@ -224,14 +217,7 @@ public class Game implements Runnable{
                         crds = crds.concat(" " + turnMatcher.group(3));
                     }
                     System.out.println("KORTIT: " +crds);
-                    ResultSet rs1 = Query.result(" Select max(id) from hands;", conn);
-                    int hand_id = 0;
-                    try {
-                        rs1.next();
-                        hand_id = rs1.getInt(1);
-                    } catch (SQLException e) {
-                        System.out.println(e.getMessage());
-                    }
+
 
                     switch (phase){
 
@@ -255,7 +241,7 @@ public class Game implements Runnable{
                             current.add(flop);
                             turns.add(flop);
                             flop.printCards();
-                            Query.SQL("INSERT into turns(siteid, phase, communitycards) VALUES("+ hand_id +", 'flop', '{"+ String.join(", ", card_src) +"}');", conn );
+
                             break;
                         case TURN:
                             phasestring = "TURN";
@@ -275,7 +261,7 @@ public class Game implements Runnable{
                             turns.add(turn);
                             turn.printCards();
 
-                            Query.SQL("INSERT into turns(siteid, phase, communitycards) VALUES("+ hand_id +", 'turn', '{"+ String.join(", ", card_src) +"}');", conn );
+
                             break;
                         case RIVER:
                             phasestring = "RIVER";
@@ -293,7 +279,7 @@ public class Game implements Runnable{
                             current.add(river);
                             turns.add(river);
                             river.printCards();
-                            Query.SQL("INSERT into turns(siteid, phase, communitycards) VALUES("+ hand_id +", 'river', '{"+ String.join(", ", card_src) +"}');", conn );
+
                             break;
                         case SHOWDOWN:
                             System.out.println("SHOWDOWN");

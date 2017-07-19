@@ -21,7 +21,7 @@ create table table_seat(
 
 create table gamemodes(
   id SERIAL,
-  gamemode varchar(100),
+  gamemode varchar(100) unique,
   currency varchar(10),
   minstake DOUBLE PRECISION,
   maxstake DOUBLE PRECISION,
@@ -29,37 +29,32 @@ create table gamemodes(
   unique(gamemode, currency, minstake, maxstake)
 );
 
-create table actions(
-  id SERIAL,
-  action varchar(50),
-  primary key(id)
-);
+
 
 create table players(
-  id SERIAL,
   name varchar(100) unique,
-  primary key(id)
+  primary key(name)
 );
 
 create table hands(
    id SERIAL,
   table_name varchar(100),
-  gamemode_id int,
-  siteid DOUBLE PRECISION unique,
+  gamemode_name varchar(100),
+  siteid varchar(100) unique,
   name varchar(100),
   date timestamp,
   primary key(id),
   foreign key(table_name) references tables(name),
-  foreign key(gamemode_id) references gamemodes(id)
+  foreign key(gamemode_name) references gamemodes(gamemode)
 );
 
 create table turns(
   id SERIAL,
-  siteid int,
+  siteid varchar(100),
   phase varchar(50),
   communitycards text[],
   primary key(id),
-  foreign key(siteid) references hands(id),
+  foreign key(siteid) references hands(siteid),
   unique(siteid, phase)
 
 );
@@ -67,24 +62,24 @@ create table turns(
 create table hand_player(
   id SERIAL,
   seat_nro int,
-  hand_id int,
-  player_id int,
+  hand_id varchar(100),
+  player_name varchar(100),
   cards text[],
   primary key(id),
-  foreign key(hand_id) references hands(id),
-  foreign key(player_id) references players(id)
+  foreign key(hand_id) references hands(siteid),
+  foreign key(player_name) references players(name),
+  unique(hand_id, player_name)
 );
 
 create table turn_player_action(
   id SERIAL,
-  player_id int,
-  action_id int,
+  player_name varchar(100),
+  action varchar(20),
   turn_id int,
   amount DOUBLE PRECISION,
   primary key(id),
   foreign key(turn_id) references turns(id),
-  foreign key(action_id) references actions(id),
-  foreign key(player_id) references players(id)
+  foreign key(player_name) references players(name)
 );
 
 INSERT into tables(name) VALUES('McNaught');
@@ -113,12 +108,7 @@ INSERT into table_seat VALUES (2,4,9);
 
 
 
---Could be integers instead of varchar--
-INSERT INTO actions(action) VALUES ('fold');
-INSERT INTO actions(action) VALUES ('call');
-INSERT INTO actions(action) VALUES ('raise');
-INSERT INTO actions(action) VALUES ('check');
-INSERT INTO actions(action) VALUES ('bet');
+
 
 
 
@@ -126,3 +116,4 @@ INSERT INTO actions(action) VALUES ('bet');
 
 
 
+commit;

@@ -2,6 +2,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.ArrayList;
+import java.sql.Connection;
 
 /**
  * Created by Jukka on 25.6.2017.
@@ -68,6 +69,25 @@ public class Hand {
         for(Player player : players.keySet()) {
             System.out.println(player.getName() +" ["+players.get(player).get(0).getCard() +"] [" + players.get(player).get(1).getCard()+"]");
         }
+    }
+
+    public void Save(Connection conn) {
+        Query.SQL("INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');" , conn);
+        for (Turn turn : turns) {
+            turn.Save(conn);
+        }
+
+        for (Player player : players.keySet()) {
+            String[] holeCards = new String[2];
+            int i = 0;
+            for (Card card : players.get(player)) {
+                holeCards[i] = '"'+card.getCard() +'"';
+            }
+            int seatnumber = table.getPlayerSeatNumber(player.name);
+            Query.SQL("INSERT INTO hand_player(seat_nro, hand_id, player_name, cards) VALUES("+ seatnumber +", '" + id +"', '" + player.name+ "', '{"+ String.join(", ", holeCards)+"}');", conn);
+        }
+
+
     }
 
     @Override

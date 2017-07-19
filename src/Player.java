@@ -48,6 +48,7 @@ public class Player {
             raises += 1;
         }
         System.out.println(name + " fold-%.: " + fldprcnt() +"  hands: " + hands +" folds: " + folds + " buttonraise: " + buttonraise() + " buttons: " + buttons);
+
     }
 
     public String getName() {

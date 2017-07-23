@@ -180,18 +180,7 @@ public class Game implements Runnable{
                 }
 
                 else if(actionMatcher.matches()) {
-                    if (phasestring.equals("HOLECARDS")) {
-                        String name = actionMatcher.group(1).trim();
-                        String foldraise = actionMatcher.group(2);
 
-                        if (name.equals(buttonname)) {
-                            System.out.println(name + "  " + foldraise);
-                            players.get(name).button(foldraise);
-                        } else {
-                            players.get(name).hand_append(foldraise);
-                        }
-
-                    } else {
                         String name = actionMatcher.group(1);
                         String foldraise = actionMatcher.group(2);
                         if (actionMatcher.group(3) != null) {
@@ -203,7 +192,7 @@ public class Game implements Runnable{
 
                     }
 
-                }
+
 
 
                 else if(turnMatcher.matches()){
@@ -223,6 +212,10 @@ public class Game implements Runnable{
 
                         case HOLECARDS:
                             phasestring = "HOLECARDS";
+                            Turn preflop = new Turn("PREFLOP", handid, cards);
+                            current.add(preflop);
+                            turns.add(preflop);
+                            preflop.printCards();
                             break;
 
                         case FLOP:

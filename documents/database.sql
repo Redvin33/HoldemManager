@@ -37,7 +37,7 @@ create table players(
 );
 
 create table hands(
-   id SERIAL,
+  id SERIAL,
   table_name varchar(100),
   gamemode_name varchar(100),
   siteid varchar(100) unique,
@@ -50,12 +50,12 @@ create table hands(
 
 create table turns(
   id SERIAL,
-  siteid varchar(100),
+  site_id varchar(100),
   phase varchar(50),
   communitycards text[],
   primary key(id),
-  foreign key(siteid) references hands(siteid),
-  unique(siteid, phase)
+  foreign key(site_id) references hands(siteid),
+  unique(site_id, phase)
 
 );
 
@@ -63,12 +63,12 @@ create table hand_player(
   id SERIAL,
   seat_nro int,
   hand_id varchar(100),
-  player_name varchar(100),
+  playername varchar(100),
   cards text[],
   primary key(id),
   foreign key(hand_id) references hands(siteid),
-  foreign key(player_name) references players(name),
-  unique(hand_id, player_name)
+  foreign key(playername) references players(name),
+  unique(hand_id, playername)
 );
 
 create table turn_player_action(

@@ -6,13 +6,20 @@ import java.sql.SQLException;
 
 
 public  class Query {
-    public static void SQL(String sql, Connection conn)
+    public static boolean SQL(String sql, Connection conn)
     {
         try {
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(sql);
+            return true;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            try {
+                conn.rollback();
+            } catch(SQLException er) {
+                System.out.println(er.getMessage());
+            }
+            return false;
         }
 
     }

@@ -3,6 +3,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.ArrayList;
 import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * Created by Jukka on 25.6.2017.
@@ -72,21 +73,27 @@ public class Hand {
     }
 
     public void Save(Connection conn) {
-        Query.SQL("INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');" , conn);
-        for (Turn turn : turns) {
-            turn.Save(conn);
-        }
-
-        for (Player player : players.keySet()) {
-            String[] holeCards = new String[2];
-            int i = 0;
-            for (Card card : players.get(player)) {
-                holeCards[i] = '"'+card.getCard() +'"';
+        if(Query.SQL("INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');" , conn)) {
+            for (Turn turn : turns) {
+                turn.Save(conn);
             }
-            int seatnumber = table.getPlayerSeatNumber(player.name);
-            Query.SQL("INSERT INTO hand_player(seat_nro, hand_id, player_name, cards) VALUES("+ seatnumber +", '" + id +"', '" + player.name+ "', '{"+ String.join(", ", holeCards)+"}');", conn);
-        }
 
+            for (Player player : players.keySet()) {
+                String[] holeCards = new String[2];
+                holeCards[0] = players.get(player).get(0).getCard();
+                holeCards[1] = players.get(player).get(1).getCard();
+
+                int seatnumber = table.getPlayerSeatNumber(player.name);
+                Query.SQL("INSERT INTO hand_player(seat_nro, hand_id, playername, cards) VALUES(" + seatnumber + ", '" + id + "', '" + player.name + "', '{" + String.join(", ", holeCards) + "}');", conn);
+                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+            try {
+                conn.commit();
+
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
 
     }
 

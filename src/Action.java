@@ -4,6 +4,8 @@
 
 import java.sql.Connection;
 import java.sql.*;
+import java.sql.SQLException;
+
 public class Action {
     private String player;
     private String action;
@@ -33,17 +35,19 @@ public class Action {
     }
 
     public void Save(Connection conn, long turn_id) {
-        ResultSet rs = Query.result("Select id from turns where siteid='"+turn_id+"';", conn);
+        ResultSet rs = Query.result("Select id from turns where site_id='"+turn_id+"';", conn);
         int i = 0;
         try {
             rs.next();
 
             i = rs.getInt(1);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
-        Query.SQL("INSERT into turn_player_action(player_name, action, turn_id, amount) VALUES('"+ player +"', " + action +"', " + i +", " +amount +");"  , conn);
+        Query.SQL("INSERT into turn_player_action(player_name, action, turn_id, amount) VALUES('"+ player +"', '" + action +"', " + i +", " +amount +");"  , conn);
+
     }
 
 

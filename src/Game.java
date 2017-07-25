@@ -31,7 +31,7 @@ public class Game implements Runnable{
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
     public static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
-    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).?(\\d+\\.\\d+){0,60}");
+    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).?([$|€|£])?(\\d+\\.\\d+)?(.to.)?([$|€|£])?(\\d+\\.\\d+)?");
     //Matches holecards
     public static Pattern holecardsPattern = Pattern.compile("(Seat.\\d+:|.+:|.*).?(.*)(shows|mucked|Dealt.to).(.*)\\[(.*)\\]");
     //Matches holecards for mucked button/SB/BB player
@@ -70,7 +70,7 @@ public class Game implements Runnable{
         Date date = new Date();
         String timezone = "";
         Table table = new Table("Default", 0);
-        HashMap<Player, ArrayList<Card>> curr_players = new HashMap<Player, ArrayList<Card>>();
+        HashMap<Player, ArrayList<Card>> curr_players = new HashMap<>();
         ArrayList<Turn> current = new ArrayList<>();
 
         String url = "jdbc:postgresql://localhost:5432/holdemManager3";
@@ -79,9 +79,11 @@ public class Game implements Runnable{
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url, user, password);
+            conn.setAutoCommit(false);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+
 
 
         while (running){
@@ -96,7 +98,7 @@ public class Game implements Runnable{
                 Matcher holecardMatcher = holecardsPattern.matcher(line);
                 Matcher muckedMatcher = muckedcardsPattern.matcher(line);
                 System.out.println("LINE: " + line);
-
+                System.out.println(Analytics.buttonbet("Redvin33", conn)+ "%");
                 if(handMatcher.matches()){
 
                     if (turns.size() >= 3) {
@@ -144,7 +146,11 @@ public class Game implements Runnable{
                     if (turns.size() == 0) {
                         System.out.println("PEKRLE");
                         Query.SQL("INSERT INTO gamemodes(gamemode, currency, minstake, maxstake) VALUES('"+gameMode.replace("'", "")+"', '" + currency +"', " +minStake +", " +maxStake +");", conn);
-
+                        try {
+                            conn.commit();
+                        } catch (SQLException e) {
+                            System.out.println(e.getMessage());
+                        }
                     }
 
                 }
@@ -183,8 +189,12 @@ public class Game implements Runnable{
 
                         String name = actionMatcher.group(1);
                         String foldraise = actionMatcher.group(2);
-                        if (actionMatcher.group(3) != null) {
-                            double i = Double.parseDouble(actionMatcher.group(3));
+                        if(actionMatcher.group(2).equals("raises")) {
+                            double i = Double.parseDouble(actionMatcher.group(7));
+                            current.get(current.size()-1).AddAction(name, foldraise, i);
+                        }
+                        else if (actionMatcher.group(3) != null) {
+                            double i = Double.parseDouble(actionMatcher.group(4));
                             current.get(current.size()-1).AddAction(name, foldraise, i);
                         } else {
                             current.get(current.size()-1).AddAction(name, foldraise, 0);
@@ -340,5 +350,6 @@ public class Game implements Runnable{
                 e.printStackTrace();
             }
         }
+
     }
 }

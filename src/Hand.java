@@ -2,6 +2,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 /**
  * Created by Jukka on 25.6.2017.
@@ -18,7 +20,7 @@ public class Hand {
     private ArrayList<Turn> turns;
     private HashMap<Player, ArrayList<Card>> players;
     private Table table;
-    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, String date, String timezone, ArrayList<Turn> turns, Table table, HashMap<Player, ArrayList<Card>> players) throws ParseException{
+    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, Date date, String timezone, ArrayList<Turn> turns, Table table, HashMap<Player, ArrayList<Card>> players) throws ParseException{
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;
@@ -49,7 +51,7 @@ public class Hand {
                 format.setTimeZone(TimeZone.getTimeZone(timezone));
                 break;
         }
-        this.date = format.parse(date);
+        this.date = date;
 
 
     }
@@ -68,6 +70,31 @@ public class Hand {
         for(Player player : players.keySet()) {
             System.out.println(player.getName() +" ["+players.get(player).get(0).getCard() +"] [" + players.get(player).get(1).getCard()+"]");
         }
+    }
+
+    public void Save(Connection conn) {
+        if(Query.SQL("INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');" , conn)) {
+            for (Turn turn : turns) {
+                turn.Save(conn);
+            }
+
+            for (Player player : players.keySet()) {
+                String[] holeCards = new String[2];
+                holeCards[0] = players.get(player).get(0).getCard();
+                holeCards[1] = players.get(player).get(1).getCard();
+
+                int seatnumber = table.getPlayerSeatNumber(player.name);
+                Query.SQL("INSERT INTO hand_player(seat_nro, hand_id, playername, cards) VALUES(" + seatnumber + ", '" + id + "', '" + player.name + "', '{" + String.join(", ", holeCards) + "}');", conn);
+                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            }
+            try {
+                conn.commit();
+
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
     }
 
     @Override

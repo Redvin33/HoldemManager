@@ -1,7 +1,7 @@
 create table tables(
-  id SERIAL,
+id SERIAL unique,
   name varchar(100),
-  primary key(id)
+  primary key(name)
 );
 
 create table seats(
@@ -21,67 +21,65 @@ create table table_seat(
 
 create table gamemodes(
   id SERIAL,
-  gamemode varchar(100),
+  gamemode varchar(100) unique,
   currency varchar(10),
   minstake DOUBLE PRECISION,
   maxstake DOUBLE PRECISION,
-  primary key(id)
+  primary key(id),
+  unique(gamemode, currency, minstake, maxstake)
 );
 
-create table actions(
-  id SERIAL,
-  action varchar(50),
-  primary key(id)
-);
+
 
 create table players(
-  id SERIAL,
   name varchar(100) unique,
-  primary key(id)
+  primary key(name)
 );
 
 create table hands(
   id SERIAL,
-  table_id int,
-  gamemode_id int,
-  siteid DOUBLE PRECISION unique,
+  table_name varchar(100),
+  gamemode_name varchar(100),
+  siteid varchar(100) unique,
   name varchar(100),
   date timestamp,
   primary key(id),
-  foreign key(table_id) references tables(id),
-  foreign key(gamemode_id) references gamemodes(id)
+  foreign key(table_name) references tables(name),
+  foreign key(gamemode_name) references gamemodes(gamemode)
 );
 
 create table turns(
   id SERIAL,
-  hand_id int,
+  site_id varchar(100),
   phase varchar(50),
   communitycards text[],
   primary key(id),
-  foreign key(hand_id) references hands(id)
+  foreign key(site_id) references hands(siteid),
+  unique(site_id, phase)
+
 );
 
 create table hand_player(
   id SERIAL,
   seat_nro int,
-  hand_id int,
-  player_id int,
+  hand_id varchar(100),
+  playername varchar(100),
   cards text[],
   primary key(id),
-  foreign key(hand_id) references hands(id),
-  foreign key(player_id) references players(id)
+  foreign key(hand_id) references hands(siteid),
+  foreign key(playername) references players(name),
+  unique(hand_id, playername)
 );
 
 create table turn_player_action(
   id SERIAL,
-  player_id int,
-  action_id int,
+  player_name varchar(100),
+  action varchar(20),
   turn_id int,
   amount DOUBLE PRECISION,
   primary key(id),
   foreign key(turn_id) references turns(id),
-  foreign key(action_id) references actions(id),
-  foreign key(player_id) references players(id)
+  foreign key(player_name) references players(name)
 );
 
 INSERT into tables(name) VALUES('McNaught');
@@ -108,28 +106,14 @@ INSERT into table_seat VALUES (2,4,7);
 INSERT into table_seat VALUES (2,4,8);
 INSERT into table_seat VALUES (2,4,9);
 
-INSERT INTO gamemodes(gamemode, currency, minstake, maxstake) VALUES ('Hold''em No Limit','USD',0.01,0.02);
 
---Could be integers instead of varchar--
-INSERT INTO actions(action) VALUES ('fold');
-INSERT INTO actions(action) VALUES ('call');
-INSERT INTO actions(action) VALUES ('raise');
-INSERT INTO actions(action) VALUES ('check');
-INSERT INTO actions(action) VALUES ('bet');
 
-INSERT into players(name) VALUES ('yakka34');
-INSERT into players(name) VALUES ('Redvin33');
+
+
+
 
 --Check if java can return timestamp that will work directly with psql--
-INSERT into hands(table_id, gamemode_id, siteid, name, date) VALUES (1,1,171235453897,'PokerStars Zoom Hand','2004-10-19 10:23:54');
 
-INSERT into turns(hand_id, phase) VALUES (1,'preflop');
-INSERT into turns(hand_id, phase, communitycards) VALUES (1,'flop','{"7c","Ac","2c"}');
-INSERT into turns(hand_id, phase, communitycards) VALUES (1,'turn','{"7c","Ac","2c","Ah"}');
 
-INSERT into hand_player(seat_nro, hand_id, player_id, cards) VALUES (1,1,1,'{"Ad","Kd"}');
-INSERT into hand_player(seat_nro, hand_id, player_id, cards) VALUES (2,1,2,'{"Qd","Jd"}');
 
-INSERT INTO turn_player_action(player_id, action_id, turn_id, amount) VALUES (1,1,1,0.0);
-INSERT INTO turn_player_action(player_id, action_id, turn_id, amount) VALUES (2,2,1,5.0);
-INSERT INTO turn_player_action(player_id, action_id, turn_id, amount) VALUES (2,4,2,0.0);
+commit;

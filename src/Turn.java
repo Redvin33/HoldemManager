@@ -4,6 +4,7 @@
 
 import java.util.ArrayList;
 import java.util.Vector;
+import java.sql.Connection;
 
 public class Turn {
 
@@ -33,8 +34,8 @@ public class Turn {
         return handid;
     }
 
-    public void AddAction(String player, String action_) {
-        Action action = new Action(player, action_);
+    public void AddAction(String player, String action_, double amount_) {
+        Action action = new Action(player, action_, amount_);
         actions.add(action);
         System.out.println("Added action: " + player +" " + action_ + " to " + tyyppi +" " + handid );
         return;
@@ -55,6 +56,22 @@ public class Turn {
         }
         System.out.println(tyyppi+ " " + handid +": " +printed);
         return;
+    }
+
+    public void Save(Connection conn) {
+        String[] community = new String[tablecards.size()];
+        int i = 0;
+        for (Card crd : tablecards) {
+            community[i] = '"' +crd.getCard() +'"';
+            i++;
+        }
+        if(Query.SQL("INSERT into turns(site_id, phase, communitycards) VALUES('"+ handid +"', '"+tyyppi+ "', '{"+ String.join(", ", community) +"}');", conn ))
+        {
+            System.out.println("Saved " + tyyppi + " " + handid + " to database.");
+            for (Action action : actions) {
+                action.Save(conn, handid);
+            }
+        }
     }
 
 }

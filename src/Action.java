@@ -34,8 +34,8 @@ public class Action {
         return;
     }
 
-    public void Save(Connection conn, long turn_id) {
-        ResultSet rs = Query.result("Select id from turns where site_id='"+turn_id+"';", conn);
+    public void Save(Connection conn, long turn_id, String phase) {
+        ResultSet rs = Query.result("Select id from turns where site_id='"+turn_id+"' and phase ='"+phase+"';", conn);
         int i = 0;
         try {
             rs.next();

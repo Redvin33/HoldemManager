@@ -1,0 +1,1465 @@
+﻿PokerStars Zoom Hand #173417257483:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:48:30 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Gabalas ($2.42 in chips) 
+Seat 2: 11mj04 ($2.06 in chips) 
+Seat 3: Redvin33 ($2 in chips) 
+Seat 4: mc.clip2 ($1.20 in chips) 
+Seat 5: maximil2601 ($3.48 in chips) 
+Seat 6: dmitrychuk ($2 in chips) 
+Seat 7: Gamnolt ($2.11 in chips) 
+Seat 8: FuerchteMich ($2.66 in chips) 
+Seat 9: Johnny24Kobe ($1.97 in chips) 
+11mj04: posts small blind $0.01
+Redvin33: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [8c Qs]
+mc.clip2: folds 
+maximil2601: folds 
+dmitrychuk: folds 
+Gamnolt: folds 
+FuerchteMich: calls $0.02
+Johnny24Kobe: calls $0.02
+Gabalas: folds 
+11mj04: calls $0.01
+Redvin33: checks 
+*** FLOP *** [Qh 9s 2h]
+11mj04: checks 
+Redvin33: bets $0.04
+FuerchteMich: folds 
+Johnny24Kobe: calls $0.04
+11mj04: folds 
+*** TURN *** [Qh 9s 2h] [Jd]
+Redvin33: bets $0.04
+Johnny24Kobe: folds 
+Uncalled bet ($0.04) returned to Redvin33
+Redvin33 collected $0.15 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.16 | Rake $0.01 
+Board [Qh 9s 2h Jd]
+Seat 1: Gabalas (button) folded before Flop (didn't bet)
+Seat 2: 11mj04 (small blind) folded on the Flop
+Seat 3: Redvin33 (big blind) collected ($0.15)
+Seat 4: mc.clip2 folded before Flop (didn't bet)
+Seat 5: maximil2601 folded before Flop (didn't bet)
+Seat 6: dmitrychuk folded before Flop (didn't bet)
+Seat 7: Gamnolt folded before Flop (didn't bet)
+Seat 8: FuerchteMich folded on the Flop
+Seat 9: Johnny24Kobe folded on the Turn
+
+
+
+PokerStars Zoom Hand #173417289743:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:49:05 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: morari995 ($2.06 in chips) 
+Seat 2: Brevik ($2.05 in chips) 
+Seat 3: luka1981good ($2 in chips) 
+Seat 4: Redvin33 ($2.09 in chips) 
+Seat 5: vleermuis ($3.38 in chips) 
+Seat 6: Yyess ($1 in chips) 
+Seat 7: Arimpiro ($1.82 in chips) 
+Seat 8: lemeco ($1.97 in chips) 
+Seat 9: Shrekych ($2.02 in chips) 
+Brevik: posts small blind $0.01
+luka1981good: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [9d Jc]
+Redvin33: folds 
+vleermuis: folds 
+Yyess: folds 
+Arimpiro: folds 
+lemeco: folds 
+Shrekych: folds 
+morari995: folds 
+Brevik: folds 
+Uncalled bet ($0.01) returned to luka1981good
+luka1981good collected $0.02 from pot
+luka1981good: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.02 | Rake $0 
+Seat 1: morari995 (button) folded before Flop (didn't bet)
+Seat 2: Brevik (small blind) folded before Flop
+Seat 3: luka1981good (big blind) collected ($0.02)
+Seat 4: Redvin33 folded before Flop (didn't bet)
+Seat 5: vleermuis folded before Flop (didn't bet)
+Seat 6: Yyess folded before Flop (didn't bet)
+Seat 7: Arimpiro folded before Flop (didn't bet)
+Seat 8: lemeco folded before Flop (didn't bet)
+Seat 9: Shrekych folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417303528:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:49:20 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Redvin33 ($2.08 in chips) 
+Seat 2: GGREXVV ($1.87 in chips) 
+Seat 3: armslol ($4.51 in chips) 
+Seat 4: Shrekych ($2.02 in chips) 
+Seat 5: kaosluntik ($2 in chips) 
+Seat 6: den180887 ($0.19 in chips) 
+Seat 7: A.Evlanov ($5.88 in chips) 
+Seat 8: IDazzyB ($1.83 in chips) 
+Seat 9: vleermuis ($3.86 in chips) 
+GGREXVV: posts small blind $0.01
+armslol: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Js 9h]
+Shrekych: folds 
+kaosluntik: folds 
+den180887: folds 
+A.Evlanov: folds 
+IDazzyB: folds 
+vleermuis: raises $0.04 to $0.06
+Redvin33: folds 
+GGREXVV: folds 
+armslol: folds 
+Uncalled bet ($0.04) returned to vleermuis
+vleermuis collected $0.05 from pot
+vleermuis: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Seat 1: Redvin33 (button) folded before Flop (didn't bet)
+Seat 2: GGREXVV (small blind) folded before Flop
+Seat 3: armslol (big blind) folded before Flop
+Seat 4: Shrekych folded before Flop (didn't bet)
+Seat 5: kaosluntik folded before Flop (didn't bet)
+Seat 6: den180887 folded before Flop (didn't bet)
+Seat 7: A.Evlanov folded before Flop (didn't bet)
+Seat 8: IDazzyB folded before Flop (didn't bet)
+Seat 9: vleermuis collected ($0.05)
+
+
+
+PokerStars Zoom Hand #173417298011:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:49:14 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Strehsen ($2.45 in chips) 
+Seat 2: puurwart ($2.43 in chips) 
+Seat 3: Alex250783 ($1.83 in chips) 
+Seat 4: Rehests ($3.93 in chips) 
+Seat 5: vozopondo ($2.26 in chips) 
+Seat 6: Redvin33 ($2.08 in chips) 
+Seat 7: Gabalas ($2.30 in chips) 
+Seat 8: DesignerMT ($1.28 in chips) 
+Seat 9: Lionvodoo ($2.02 in chips) 
+puurwart: posts small blind $0.01
+Alex250783: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [6s 9s]
+Rehests: folds 
+vozopondo: raises $0.04 to $0.06
+Redvin33: folds 
+Gabalas: folds 
+DesignerMT: calls $0.06
+Lionvodoo: folds 
+Strehsen: folds 
+puurwart: calls $0.05
+Alex250783: folds 
+*** FLOP *** [8c Td 5h]
+puurwart: bets $0.19
+vozopondo: calls $0.19
+DesignerMT: folds 
+*** TURN *** [8c Td 5h] [Tc]
+puurwart: bets $0.56
+vozopondo: calls $0.56
+*** RIVER *** [8c Td 5h Tc] [2d]
+puurwart: bets $1.62 and is all-in
+vozopondo: calls $1.45 and is all-in
+Uncalled bet ($0.17) returned to puurwart
+*** SHOW DOWN ***
+puurwart: shows [8h 8d] (a full house, Eights full of Tens)
+vozopondo: shows [Ad Ah] (two pair, Aces and Tens)
+puurwart collected $4.44 from pot
+*** SUMMARY ***
+Total pot $4.60 | Rake $0.16 
+Board [8c Td 5h Tc 2d]
+Seat 1: Strehsen (button) folded before Flop (didn't bet)
+Seat 2: puurwart (small blind) showed [8h 8d] and won ($4.44) with a full house, Eights full of Tens
+Seat 3: Alex250783 (big blind) folded before Flop
+Seat 4: Rehests folded before Flop (didn't bet)
+Seat 5: vozopondo showed [Ad Ah] and lost with two pair, Aces and Tens
+Seat 6: Redvin33 folded before Flop (didn't bet)
+Seat 7: Gabalas folded before Flop (didn't bet)
+Seat 8: DesignerMT folded on the Flop
+Seat 9: Lionvodoo folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417307187:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:49:24 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: P9TOCHKA ($1.59 in chips) 
+Seat 2: A.Evlanov ($5.88 in chips) 
+Seat 3: 77edik77 ($2.70 in chips) 
+Seat 4: Sedoi7533 ($2 in chips) 
+Seat 5: daemonicus_1 ($2.11 in chips) 
+Seat 6: mc.clip2 ($1.26 in chips) 
+Seat 7: daniel040988 ($1.65 in chips) 
+Seat 8: Alex250783 ($0.83 in chips) 
+Seat 9: Redvin33 ($2.08 in chips) 
+A.Evlanov: posts small blind $0.01
+77edik77: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Ks Kh]
+Sedoi7533: folds 
+daemonicus_1: folds 
+mc.clip2: calls $0.02
+daniel040988: folds 
+Alex250783: folds 
+Redvin33: raises $0.04 to $0.06
+P9TOCHKA: folds 
+A.Evlanov: folds 
+77edik77: folds 
+mc.clip2: calls $0.04
+*** FLOP *** [5d 6c 5s]
+mc.clip2: checks 
+Redvin33: bets $0.02
+mc.clip2: raises $0.02 to $0.04
+Redvin33: calls $0.02
+*** TURN *** [5d 6c 5s] [3h]
+mc.clip2: bets $0.12
+Redvin33: calls $0.12
+*** RIVER *** [5d 6c 5s 3h] [9s]
+mc.clip2: bets $0.23
+Redvin33: calls $0.23
+*** SHOW DOWN ***
+mc.clip2: shows [8h 7h] (a straight, Five to Nine)
+Redvin33: mucks hand 
+mc.clip2 collected $0.90 from pot
+*** SUMMARY ***
+Total pot $0.93 | Rake $0.03 
+Board [5d 6c 5s 3h 9s]
+Seat 1: P9TOCHKA (button) folded before Flop (didn't bet)
+Seat 2: A.Evlanov (small blind) folded before Flop
+Seat 3: 77edik77 (big blind) folded before Flop
+Seat 4: Sedoi7533 folded before Flop (didn't bet)
+Seat 5: daemonicus_1 folded before Flop (didn't bet)
+Seat 6: mc.clip2 showed [8h 7h] and won ($0.90) with a straight, Five to Nine
+Seat 7: daniel040988 folded before Flop (didn't bet)
+Seat 8: Alex250783 folded before Flop (didn't bet)
+Seat 9: Redvin33 mucked [Ks Kh]
+
+
+
+PokerStars Zoom Hand #173417294338:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:49:10 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: mairad ($1.76 in chips) 
+Seat 2: Redvin33 ($2.09 in chips) 
+Seat 3: Flleys ($2.76 in chips) 
+Seat 4: den180887 ($1.07 in chips) 
+Seat 5: Makryak777 ($2.70 in chips) 
+Seat 6: vadsagal ($2.09 in chips) 
+Seat 7: KingValent96 ($2.95 in chips) 
+Seat 8: NeverAce33 ($1.76 in chips) 
+Seat 9: 776030 ($2.07 in chips) 
+Redvin33: posts small blind $0.01
+Flleys: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4s 6c]
+den180887: folds 
+Makryak777: folds 
+vadsagal: folds 
+KingValent96: raises $0.08 to $0.10
+NeverAce33: folds 
+776030: calls $0.10
+mairad: folds 
+Redvin33: folds 
+Flleys: folds 
+*** FLOP *** [3d 8h 5d]
+KingValent96: bets $0.22
+776030: calls $0.22
+*** TURN *** [3d 8h 5d] [Jh]
+KingValent96: checks 
+776030: checks 
+*** RIVER *** [3d 8h 5d Jh] [8c]
+KingValent96: bets $0.33
+776030: folds 
+Uncalled bet ($0.33) returned to KingValent96
+KingValent96 collected $0.65 from pot
+KingValent96: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.67 | Rake $0.02 
+Board [3d 8h 5d Jh 8c]
+Seat 1: mairad (button) folded before Flop (didn't bet)
+Seat 2: Redvin33 (small blind) folded before Flop
+Seat 3: Flleys (big blind) folded before Flop
+Seat 4: den180887 folded before Flop (didn't bet)
+Seat 5: Makryak777 folded before Flop (didn't bet)
+Seat 6: vadsagal folded before Flop (didn't bet)
+Seat 7: KingValent96 collected ($0.65)
+Seat 8: NeverAce33 folded before Flop (didn't bet)
+Seat 9: 776030 folded on the River
+
+
+
+PokerStars Zoom Hand #173417350642:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:50:11 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: bungaku ($2 in chips) 
+Seat 2: Ruslan A. A. ($1.71 in chips) 
+Seat 3: o-husky ($2.99 in chips) 
+Seat 4: V alinovax ($2.06 in chips) 
+Seat 5: Redvin33 ($1.63 in chips) 
+Seat 6: Sunny-Shanse ($4.72 in chips) 
+Seat 7: MrRussia777 ($2.08 in chips) 
+Seat 8: omegasolid ($2.41 in chips) 
+Seat 9: Youssein86 ($1.58 in chips) 
+Ruslan A. A.: posts small blind $0.01
+o-husky: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [6s As]
+V alinovax: folds 
+Redvin33: calls $0.02
+Sunny-Shanse: folds 
+MrRussia777: folds 
+omegasolid: folds 
+Youssein86 has timed out
+Youssein86: folds 
+bungaku: folds 
+Ruslan A. A.: folds 
+o-husky: checks 
+*** FLOP *** [Kd 6h 5h]
+o-husky: checks 
+Redvin33: bets $0.02
+o-husky: calls $0.02
+*** TURN *** [Kd 6h 5h] [Jd]
+o-husky: checks 
+Redvin33: checks 
+*** RIVER *** [Kd 6h 5h Jd] [Tc]
+o-husky: checks 
+Redvin33: checks 
+*** SHOW DOWN ***
+o-husky: shows [7s 8d] (high card King)
+Redvin33: shows [6s As] (a pair of Sixes)
+Redvin33 collected $0.09 from pot
+*** SUMMARY ***
+Total pot $0.09 | Rake $0 
+Board [Kd 6h 5h Jd Tc]
+Seat 1: bungaku (button) folded before Flop (didn't bet)
+Seat 2: Ruslan A. A. (small blind) folded before Flop
+Seat 3: o-husky (big blind) showed [7s 8d] and lost with high card King
+Seat 4: V alinovax folded before Flop (didn't bet)
+Seat 5: Redvin33 showed [6s As] and won ($0.09) with a pair of Sixes
+Seat 6: Sunny-Shanse folded before Flop (didn't bet)
+Seat 7: MrRussia777 folded before Flop (didn't bet)
+Seat 8: omegasolid folded before Flop (didn't bet)
+Seat 9: Youssein86 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417400425:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:51:05 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: MrVavrek ($2.09 in chips) 
+Seat 2: o-husky ($2.95 in chips) 
+Seat 3: hanspoker ($2.45 in chips) 
+Seat 4: TWmountain ($2 in chips) 
+Seat 5: VV888V ($1.49 in chips) 
+Seat 6: aleks118 ($4.35 in chips) 
+Seat 7: Plmax94 ($1.81 in chips) 
+Seat 8: Redvin33 ($1.68 in chips) 
+Seat 9: Rehests ($6.90 in chips) 
+o-husky: posts small blind $0.01
+hanspoker: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [2d 8d]
+TWmountain: folds 
+VV888V: folds 
+aleks118: folds 
+Plmax94: folds 
+Redvin33: folds 
+Rehests: folds 
+MrVavrek: folds 
+o-husky: raises $0.04 to $0.06
+hanspoker: folds 
+Uncalled bet ($0.04) returned to o-husky
+o-husky collected $0.04 from pot
+o-husky: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.04 | Rake $0 
+Seat 1: MrVavrek (button) folded before Flop (didn't bet)
+Seat 2: o-husky (small blind) collected ($0.04)
+Seat 3: hanspoker (big blind) folded before Flop
+Seat 4: TWmountain folded before Flop (didn't bet)
+Seat 5: VV888V folded before Flop (didn't bet)
+Seat 6: aleks118 folded before Flop (didn't bet)
+Seat 7: Plmax94 folded before Flop (didn't bet)
+Seat 8: Redvin33 folded before Flop (didn't bet)
+Seat 9: Rehests folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417404199:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:51:09 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: kosciej ($2.21 in chips) 
+Seat 2: morari995 ($2.12 in chips) 
+Seat 3: Peter_83785 ($3.63 in chips) 
+Seat 4: DesignerMT ($0.59 in chips) 
+Seat 5: aleks118 ($4.35 in chips) 
+Seat 6: bungaku ($2.03 in chips) 
+Seat 7: Redvin33 ($1.68 in chips) 
+Seat 8: ArgusLL ($2.37 in chips) 
+Seat 9: setair ($1.88 in chips) 
+morari995: posts small blind $0.01
+Peter_83785: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [7c Td]
+DesignerMT: folds 
+aleks118: folds 
+bungaku: folds 
+Redvin33: folds 
+ArgusLL: folds 
+setair: raises $0.02 to $0.04
+kosciej: folds 
+morari995: folds 
+Peter_83785: folds 
+Uncalled bet ($0.02) returned to setair
+setair collected $0.05 from pot
+setair: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Seat 1: kosciej (button) folded before Flop (didn't bet)
+Seat 2: morari995 (small blind) folded before Flop
+Seat 3: Peter_83785 (big blind) folded before Flop
+Seat 4: DesignerMT folded before Flop (didn't bet)
+Seat 5: aleks118 folded before Flop (didn't bet)
+Seat 6: bungaku folded before Flop (didn't bet)
+Seat 7: Redvin33 folded before Flop (didn't bet)
+Seat 8: ArgusLL folded before Flop (didn't bet)
+Seat 9: setair collected ($0.05)
+
+
+
+PokerStars Zoom Hand #173417417908:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:51:24 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: armslol ($4.63 in chips) 
+Seat 2: Indigeridoo ($2 in chips) 
+Seat 3: Redvin33 ($1.67 in chips) 
+Seat 4: o-husky ($2.97 in chips) 
+Seat 5: Dhaka_bear ($3.57 in chips) 
+Seat 6: Tanya7159466 ($1.88 in chips) 
+Seat 7: zmss ($2 in chips) 
+Seat 8: Shrekych ($2.53 in chips) 
+Seat 9: kaosluntik ($2 in chips) 
+Indigeridoo: posts small blind $0.01
+Redvin33: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Ac 7d]
+o-husky: folds 
+Dhaka_bear: folds 
+Tanya7159466: folds 
+zmss: folds 
+Shrekych: folds 
+kaosluntik: folds 
+armslol: folds 
+Indigeridoo: folds 
+Uncalled bet ($0.01) returned to Redvin33
+Redvin33 collected $0.02 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.02 | Rake $0 
+Seat 1: armslol (button) folded before Flop (didn't bet)
+Seat 2: Indigeridoo (small blind) folded before Flop
+Seat 3: Redvin33 (big blind) collected ($0.02)
+Seat 4: o-husky folded before Flop (didn't bet)
+Seat 5: Dhaka_bear folded before Flop (didn't bet)
+Seat 6: Tanya7159466 folded before Flop (didn't bet)
+Seat 7: zmss folded before Flop (didn't bet)
+Seat 8: Shrekych folded before Flop (didn't bet)
+Seat 9: kaosluntik folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417407845:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:51:13 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: TopRegGirl ($2.11 in chips) 
+Seat 2: Travian75 ($3.32 in chips) 
+Seat 3: LukshaON ($2.23 in chips) 
+Seat 4: Redvin33 ($1.68 in chips) 
+Seat 5: Oresboroz ($2.50 in chips) 
+Seat 6: V alinovax ($2.12 in chips) 
+Seat 7: komarkoff ($2 in chips) 
+Seat 8: 777uliana777 ($2 in chips) 
+Seat 9: MrVavrek ($2.09 in chips) 
+Travian75: posts small blind $0.01
+LukshaON: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4c Qh]
+Redvin33: folds 
+Oresboroz: folds 
+V alinovax: folds 
+komarkoff: folds 
+777uliana777: folds 
+MrVavrek: raises $0.02 to $0.04
+TopRegGirl: raises $0.11 to $0.15
+Travian75: folds 
+LukshaON: folds 
+MrVavrek: folds 
+Uncalled bet ($0.11) returned to TopRegGirl
+TopRegGirl collected $0.11 from pot
+TopRegGirl: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.11 | Rake $0 
+Seat 1: TopRegGirl (button) collected ($0.11)
+Seat 2: Travian75 (small blind) folded before Flop
+Seat 3: LukshaON (big blind) folded before Flop
+Seat 4: Redvin33 folded before Flop (didn't bet)
+Seat 5: Oresboroz folded before Flop (didn't bet)
+Seat 6: V alinovax folded before Flop (didn't bet)
+Seat 7: komarkoff folded before Flop (didn't bet)
+Seat 8: 777uliana777 folded before Flop (didn't bet)
+Seat 9: MrVavrek folded before Flop
+
+
+
+PokerStars Zoom Hand #173417410559:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:51:16 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: themennis402 ($2 in chips) 
+Seat 2: Redvin33 ($1.68 in chips) 
+Seat 3: Le Clienth ($2.26 in chips) 
+Seat 4: thomasdibdin ($2.09 in chips) 
+Seat 5: SonTNkts ($2.90 in chips) 
+Seat 6: TopRegGirl ($2.03 in chips) 
+Seat 7: kosciej ($2.16 in chips) 
+Seat 8: mariani77 ($1.98 in chips) 
+Seat 9: Lionvodoo ($2.08 in chips) 
+Redvin33: posts small blind $0.01
+Le Clienth: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [6h 3h]
+thomasdibdin: folds 
+SonTNkts: folds 
+TopRegGirl: folds 
+kosciej: folds 
+mariani77: raises $0.04 to $0.06
+Lionvodoo: folds 
+themennis402: calls $0.06
+Redvin33: folds 
+Le Clienth: folds 
+*** FLOP *** [7s Qd 4d]
+mariani77: bets $0.07
+themennis402: calls $0.07
+*** TURN *** [7s Qd 4d] [8d]
+mariani77: bets $0.14
+themennis402: calls $0.14
+*** RIVER *** [7s Qd 4d 8d] [As]
+mariani77: bets $0.28
+themennis402: folds 
+Uncalled bet ($0.28) returned to mariani77
+mariani77 collected $0.55 from pot
+mariani77: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.57 | Rake $0.02 
+Board [7s Qd 4d 8d As]
+Seat 1: themennis402 (button) folded on the River
+Seat 2: Redvin33 (small blind) folded before Flop
+Seat 3: Le Clienth (big blind) folded before Flop
+Seat 4: thomasdibdin folded before Flop (didn't bet)
+Seat 5: SonTNkts folded before Flop (didn't bet)
+Seat 6: TopRegGirl folded before Flop (didn't bet)
+Seat 7: kosciej folded before Flop (didn't bet)
+Seat 8: mariani77 collected ($0.55)
+Seat 9: Lionvodoo folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417426234:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:51:33 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Redvin33 ($1.68 in chips) 
+Seat 2: babisant ($9.74 in chips) 
+Seat 3: maximil2601 ($3.38 in chips) 
+Seat 4: ukmadhouse ($2.30 in chips) 
+Seat 5: 777uliana777 ($6.03 in chips) 
+Seat 6: vozopondo ($2.05 in chips) 
+Seat 7: setair ($1.91 in chips) 
+Seat 8: Chariot1982 ($1.71 in chips) 
+Seat 9: kboorman ($2.03 in chips) 
+babisant: posts small blind $0.01
+maximil2601: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Kd As]
+ukmadhouse: folds 
+777uliana777: folds 
+vozopondo: raises $0.04 to $0.06
+setair: folds 
+Chariot1982: folds 
+kboorman: folds 
+Redvin33: raises $0.08 to $0.14
+babisant: folds 
+maximil2601: folds 
+vozopondo: calls $0.08
+*** FLOP *** [5d 6c 5h]
+vozopondo: checks 
+Redvin33: bets $0.14
+vozopondo: folds 
+Uncalled bet ($0.14) returned to Redvin33
+Redvin33 collected $0.30 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.31 | Rake $0.01 
+Board [5d 6c 5h]
+Seat 1: Redvin33 (button) collected ($0.30)
+Seat 2: babisant (small blind) folded before Flop
+Seat 3: maximil2601 (big blind) folded before Flop
+Seat 4: ukmadhouse folded before Flop (didn't bet)
+Seat 5: 777uliana777 folded before Flop (didn't bet)
+Seat 6: vozopondo folded on the Flop
+Seat 7: setair folded before Flop (didn't bet)
+Seat 8: Chariot1982 folded before Flop (didn't bet)
+Seat 9: kboorman folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417414137:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:51:20 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: babisant ($9.74 in chips) 
+Seat 2: armslol ($10.45 in chips) 
+Seat 3: Tibor Bubla ($2 in chips) 
+Seat 4: 777uliana777 ($5.46 in chips) 
+Seat 5: Lionvodoo ($2.08 in chips) 
+Seat 6: Shrekych ($2.53 in chips) 
+Seat 7: kosciej ($2.21 in chips) 
+Seat 8: Ruslan A. A. ($1.68 in chips) 
+Seat 9: Redvin33 ($1.67 in chips) 
+armslol: posts small blind $0.01
+Tibor Bubla: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4s Th]
+777uliana777: raises $0.03 to $0.05
+Lionvodoo: folds 
+Shrekych: folds 
+kosciej: folds 
+Ruslan A. A.: folds 
+Redvin33: folds 
+babisant: folds 
+armslol: folds 
+Tibor Bubla: folds 
+Uncalled bet ($0.03) returned to 777uliana777
+777uliana777 collected $0.05 from pot
+777uliana777: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Seat 1: babisant (button) folded before Flop (didn't bet)
+Seat 2: armslol (small blind) folded before Flop
+Seat 3: Tibor Bubla (big blind) folded before Flop
+Seat 4: 777uliana777 collected ($0.05)
+Seat 5: Lionvodoo folded before Flop (didn't bet)
+Seat 6: Shrekych folded before Flop (didn't bet)
+Seat 7: kosciej folded before Flop (didn't bet)
+Seat 8: Ruslan A. A. folded before Flop (didn't bet)
+Seat 9: Redvin33 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417449963:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:51:59 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: V alinovax ($2.10 in chips) 
+Seat 2: djafar63 ($2 in chips) 
+Seat 3: morari995 ($2.03 in chips) 
+Seat 4: arti20 ($1.13 in chips) 
+Seat 5: Yroslav Mudr ($4.99 in chips) 
+Seat 6: 16111995UVS ($2.52 in chips) 
+Seat 7: Brevik ($1.96 in chips) 
+Seat 8: Redvin33 ($1.84 in chips) 
+Seat 9: Rehests ($4.21 in chips) 
+djafar63: posts small blind $0.01
+morari995: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [3d Kh]
+arti20: folds 
+Yroslav Mudr: raises $0.02 to $0.04
+16111995UVS: folds 
+Brevik: folds 
+Redvin33: folds 
+Rehests: folds 
+V alinovax: folds 
+djafar63: calls $0.03
+morari995: folds 
+*** FLOP *** [6s 9d Ts]
+djafar63: checks 
+Yroslav Mudr: checks 
+*** TURN *** [6s 9d Ts] [2c]
+djafar63: bets $0.02
+Yroslav Mudr: calls $0.02
+*** RIVER *** [6s 9d Ts 2c] [5d]
+djafar63: checks 
+Yroslav Mudr: checks 
+*** SHOW DOWN ***
+djafar63: shows [Qh 8s] (high card Queen)
+Yroslav Mudr: shows [Qd Kc] (high card King)
+Yroslav Mudr collected $0.14 from pot
+*** SUMMARY ***
+Total pot $0.14 | Rake $0 
+Board [6s 9d Ts 2c 5d]
+Seat 1: V alinovax (button) folded before Flop (didn't bet)
+Seat 2: djafar63 (small blind) showed [Qh 8s] and lost with high card Queen
+Seat 3: morari995 (big blind) folded before Flop
+Seat 4: arti20 folded before Flop (didn't bet)
+Seat 5: Yroslav Mudr showed [Qd Kc] and won ($0.14) with high card King
+Seat 6: 16111995UVS folded before Flop (didn't bet)
+Seat 7: Brevik folded before Flop (didn't bet)
+Seat 8: Redvin33 folded before Flop (didn't bet)
+Seat 9: Rehests folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417457262:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:52:07 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: JJhatesMe ($2.30 in chips) 
+Seat 2: djafar63 ($2.03 in chips) 
+Seat 3: scorpion2680 ($0.89 in chips) 
+Seat 4: Gamnolt ($2.13 in chips) 
+Seat 5: Redvin33 ($1.84 in chips) 
+Seat 6: NeverAce33 ($1.69 in chips) 
+Seat 7: x@t@bich ($2 in chips) 
+Seat 8: ukmadhouse ($2.43 in chips) 
+Seat 9: WuZuMuZu ($3.09 in chips) 
+djafar63: posts small blind $0.01
+scorpion2680: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [As 3c]
+Gamnolt: folds 
+Redvin33: raises $0.02 to $0.04
+NeverAce33: folds 
+x@t@bich: folds 
+ukmadhouse: folds 
+WuZuMuZu: folds 
+JJhatesMe: folds 
+djafar63: folds 
+scorpion2680: calls $0.02
+*** FLOP *** [8s 4h 9d]
+scorpion2680: checks 
+Redvin33: checks 
+*** TURN *** [8s 4h 9d] [Ad]
+scorpion2680: checks 
+Redvin33: bets $0.02
+scorpion2680: folds 
+Uncalled bet ($0.02) returned to Redvin33
+Redvin33 collected $0.09 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.09 | Rake $0 
+Board [8s 4h 9d Ad]
+Seat 1: JJhatesMe (button) folded before Flop (didn't bet)
+Seat 2: djafar63 (small blind) folded before Flop
+Seat 3: scorpion2680 (big blind) folded on the Turn
+Seat 4: Gamnolt folded before Flop (didn't bet)
+Seat 5: Redvin33 collected ($0.09)
+Seat 6: NeverAce33 folded before Flop (didn't bet)
+Seat 7: x@t@bich folded before Flop (didn't bet)
+Seat 8: ukmadhouse folded before Flop (didn't bet)
+Seat 9: WuZuMuZu folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417487465:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:52:40 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Pooyan71 ($1.46 in chips) 
+Seat 2: stapec ($2.16 in chips) 
+Seat 3: klazman ($1.04 in chips) 
+Seat 4: KoAlRy ($2.03 in chips) 
+Seat 5: Stana63 ($0.84 in chips) 
+Seat 6: pedro0795 ($2 in chips) 
+Seat 7: arti20 ($1.13 in chips) 
+Seat 8: aleks118 ($4.53 in chips) 
+Seat 9: Redvin33 ($1.89 in chips) 
+stapec: posts small blind $0.01
+klazman: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [6d 8c]
+KoAlRy: folds 
+Stana63: folds 
+pedro0795: folds 
+arti20: folds 
+aleks118: folds 
+Redvin33: folds 
+Pooyan71: raises $0.04 to $0.06
+stapec: folds 
+klazman: folds 
+Uncalled bet ($0.04) returned to Pooyan71
+Pooyan71 collected $0.05 from pot
+Pooyan71: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Seat 1: Pooyan71 (button) collected ($0.05)
+Seat 2: stapec (small blind) folded before Flop
+Seat 3: klazman (big blind) folded before Flop
+Seat 4: KoAlRy folded before Flop (didn't bet)
+Seat 5: Stana63 folded before Flop (didn't bet)
+Seat 6: pedro0795 folded before Flop (didn't bet)
+Seat 7: arti20 folded before Flop (didn't bet)
+Seat 8: aleks118 folded before Flop (didn't bet)
+Seat 9: Redvin33 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417453593:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:52:03 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: rjz88 ($2 in chips) 
+Seat 2: Rehests ($3.86 in chips) 
+Seat 3: bungaku ($2.28 in chips) 
+Seat 4: hanspoker ($2.17 in chips) 
+Seat 5: Chariot1982 ($1.70 in chips) 
+Seat 6: egegeyburg ($3.08 in chips) 
+Seat 7: Redvin33 ($1.84 in chips) 
+Seat 8: 777uliana777 ($6.01 in chips) 
+Seat 9: NeverAce33 ($1.69 in chips) 
+Rehests: posts small blind $0.01
+bungaku: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4c Kc]
+hanspoker: folds 
+Chariot1982: raises $0.02 to $0.04
+egegeyburg: folds 
+Redvin33: folds 
+777uliana777: folds 
+NeverAce33: folds 
+rjz88: calls $0.04
+Rehests: folds 
+bungaku: folds 
+*** FLOP *** [9c Kd Th]
+Chariot1982: checks 
+rjz88: bets $0.07
+Chariot1982: calls $0.07
+*** TURN *** [9c Kd Th] [6h]
+Chariot1982: checks 
+rjz88: bets $0.12
+Chariot1982: calls $0.12
+*** RIVER *** [9c Kd Th 6h] [2c]
+Chariot1982: checks 
+rjz88: checks 
+*** SHOW DOWN ***
+Chariot1982: shows [Jd Jh] (a pair of Jacks)
+rjz88: mucks hand 
+Chariot1982 collected $0.47 from pot
+*** SUMMARY ***
+Total pot $0.49 | Rake $0.02 
+Board [9c Kd Th 6h 2c]
+Seat 1: rjz88 (button) mucked [Jc Td]
+Seat 2: Rehests (small blind) folded before Flop
+Seat 3: bungaku (big blind) folded before Flop
+Seat 4: hanspoker folded before Flop (didn't bet)
+Seat 5: Chariot1982 showed [Jd Jh] and won ($0.47) with a pair of Jacks
+Seat 6: egegeyburg folded before Flop (didn't bet)
+Seat 7: Redvin33 folded before Flop (didn't bet)
+Seat 8: 777uliana777 folded before Flop (didn't bet)
+Seat 9: NeverAce33 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417483818:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:52:36 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: puurwart ($4.85 in chips) 
+Seat 2: A.Evlanov ($5.83 in chips) 
+Seat 3: slimshady948 ($2 in chips) 
+Seat 4: armslol ($10.33 in chips) 
+Seat 5: Tony-Broke ($2.14 in chips) 
+Seat 6: Redvin33 ($1.89 in chips) 
+Seat 7: alenastorm ($2.86 in chips) 
+Seat 8: maximil2601 ($3.35 in chips) 
+Seat 9: Xamil666 ($2.46 in chips) 
+A.Evlanov: posts small blind $0.01
+slimshady948: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [8s 7h]
+armslol: folds 
+Tony-Broke: folds 
+Redvin33: folds 
+alenastorm: folds 
+maximil2601: folds 
+Xamil666: raises $0.04 to $0.06
+puurwart: calls $0.06
+A.Evlanov: folds 
+slimshady948: folds 
+*** FLOP *** [6c 3s Ks]
+Xamil666: bets $0.08
+puurwart: folds 
+Uncalled bet ($0.08) returned to Xamil666
+Xamil666 collected $0.14 from pot
+Xamil666: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.15 | Rake $0.01 
+Board [6c 3s Ks]
+Seat 1: puurwart (button) folded on the Flop
+Seat 2: A.Evlanov (small blind) folded before Flop
+Seat 3: slimshady948 (big blind) folded before Flop
+Seat 4: armslol folded before Flop (didn't bet)
+Seat 5: Tony-Broke folded before Flop (didn't bet)
+Seat 6: Redvin33 folded before Flop (didn't bet)
+Seat 7: alenastorm folded before Flop (didn't bet)
+Seat 8: maximil2601 folded before Flop (didn't bet)
+Seat 9: Xamil666 collected ($0.14)
+
+
+
+PokerStars Zoom Hand #173417494802:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:52:48 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: sewq55 ($1.04 in chips) 
+Seat 2: ShadMrPo ($2.33 in chips) 
+Seat 3: Redvin33 ($1.88 in chips) 
+Seat 4: 776030 ($1.62 in chips) 
+Seat 5: vadsagal ($1.99 in chips) 
+Seat 6: CasherD ($3.44 in chips) 
+Seat 7: ocrimus ($5.18 in chips) 
+Seat 8: daniel040988 ($1.50 in chips) 
+Seat 9: V alinovax ($2.09 in chips) 
+ShadMrPo: posts small blind $0.01
+Redvin33: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Qh 3d]
+776030: folds 
+vadsagal: folds 
+CasherD: folds 
+ocrimus: folds 
+daniel040988: folds 
+V alinovax: folds 
+sewq55: raises $0.02 to $0.04
+ShadMrPo: folds 
+Redvin33: calls $0.02
+*** FLOP *** [Kc 4s Ts]
+Redvin33: checks 
+sewq55: bets $0.06
+Redvin33: folds 
+Uncalled bet ($0.06) returned to sewq55
+sewq55 collected $0.09 from pot
+sewq55: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.09 | Rake $0 
+Board [Kc 4s Ts]
+Seat 1: sewq55 (button) collected ($0.09)
+Seat 2: ShadMrPo (small blind) folded before Flop
+Seat 3: Redvin33 (big blind) folded on the Flop
+Seat 4: 776030 folded before Flop (didn't bet)
+Seat 5: vadsagal folded before Flop (didn't bet)
+Seat 6: CasherD folded before Flop (didn't bet)
+Seat 7: ocrimus folded before Flop (didn't bet)
+Seat 8: daniel040988 folded before Flop (didn't bet)
+Seat 9: V alinovax folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417491080:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:52:44 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: baradou88 ($1.98 in chips) 
+Seat 2: Redvin33 ($1.89 in chips) 
+Seat 3: Tony-Broke ($2.14 in chips) 
+Seat 4: bart8612 ($2.09 in chips) 
+Seat 5: WuZuMuZu ($3.09 in chips) 
+Seat 6: kwint34b0rg ($1.46 in chips) 
+Seat 7: A.Evlanov ($2.13 in chips) 
+Seat 8: bohnar ($2.15 in chips) 
+Seat 9: aking0427 ($1.45 in chips) 
+Redvin33: posts small blind $0.01
+Tony-Broke: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [9h 2d]
+bart8612: folds 
+WuZuMuZu: folds 
+kwint34b0rg has timed out
+kwint34b0rg: folds 
+A.Evlanov: folds 
+bohnar: folds 
+aking0427: calls $0.02
+baradou88: folds 
+Redvin33: folds 
+Tony-Broke: checks 
+*** FLOP *** [Jh 6s 2s]
+Tony-Broke: checks 
+aking0427: bets $0.02
+Tony-Broke: folds 
+Uncalled bet ($0.02) returned to aking0427
+aking0427 collected $0.05 from pot
+aking0427: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Board [Jh 6s 2s]
+Seat 1: baradou88 (button) folded before Flop (didn't bet)
+Seat 2: Redvin33 (small blind) folded before Flop
+Seat 3: Tony-Broke (big blind) folded on the Flop
+Seat 4: bart8612 folded before Flop (didn't bet)
+Seat 5: WuZuMuZu folded before Flop (didn't bet)
+Seat 6: kwint34b0rg folded before Flop (didn't bet)
+Seat 7: A.Evlanov folded before Flop (didn't bet)
+Seat 8: bohnar folded before Flop (didn't bet)
+Seat 9: aking0427 collected ($0.05)
+
+
+
+PokerStars Zoom Hand #173417522349:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:53:18 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Redvin33 ($1.84 in chips) 
+Seat 2: bungaku ($2.04 in chips) 
+Seat 3: GGREXVV ($2.93 in chips) 
+Seat 4: daniel040988 ($1.42 in chips) 
+Seat 5: CompakT711 ($1.09 in chips) 
+Seat 6: z_west ($2.39 in chips) 
+Seat 7: kUBAJIDA[1g] ($2 in chips) 
+Seat 8: Williwacker9 ($2.35 in chips) 
+Seat 9: Travian75 ($3.20 in chips) 
+bungaku: posts small blind $0.01
+GGREXVV: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [3h 4s]
+daniel040988: folds 
+CompakT711: folds 
+z_west: folds 
+kUBAJIDA[1g]: folds 
+Williwacker9: folds 
+Travian75: folds 
+Redvin33: folds 
+bungaku: folds 
+Uncalled bet ($0.01) returned to GGREXVV
+GGREXVV collected $0.02 from pot
+GGREXVV: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.02 | Rake $0 
+Seat 1: Redvin33 (button) folded before Flop (didn't bet)
+Seat 2: bungaku (small blind) folded before Flop
+Seat 3: GGREXVV (big blind) collected ($0.02)
+Seat 4: daniel040988 folded before Flop (didn't bet)
+Seat 5: CompakT711 folded before Flop (didn't bet)
+Seat 6: z_west folded before Flop (didn't bet)
+Seat 7: kUBAJIDA[1g] folded before Flop (didn't bet)
+Seat 8: Williwacker9 folded before Flop (didn't bet)
+Seat 9: Travian75 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417526901:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:53:23 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: ocrimus ($3.25 in chips) 
+Seat 2: marielou2004 ($2 in chips) 
+Seat 3: kishama ($2.82 in chips) 
+Seat 4: Hecht197009 ($7.61 in chips) 
+Seat 5: komarkoff ($2 in chips) 
+Seat 6: dimon4egg.R ($4.50 in chips) 
+Seat 7: omegasolid ($1.96 in chips) 
+Seat 8: Redvin33 ($1.84 in chips) 
+Seat 9: Xamil666 ($2 in chips) 
+marielou2004: posts small blind $0.01
+kishama: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [As 4d]
+Hecht197009: folds 
+komarkoff: raises $0.04 to $0.06
+dimon4egg.R: folds 
+omegasolid: folds 
+Redvin33: calls $0.06
+Xamil666: folds 
+ocrimus: folds 
+marielou2004: folds 
+kishama: calls $0.04
+*** FLOP *** [Tc Kh Kd]
+kishama: checks 
+komarkoff: checks 
+Redvin33: bets $0.08
+kishama: folds 
+komarkoff: folds 
+Uncalled bet ($0.08) returned to Redvin33
+Redvin33 collected $0.18 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.19 | Rake $0.01 
+Board [Tc Kh Kd]
+Seat 1: ocrimus (button) folded before Flop (didn't bet)
+Seat 2: marielou2004 (small blind) folded before Flop
+Seat 3: kishama (big blind) folded on the Flop
+Seat 4: Hecht197009 folded before Flop (didn't bet)
+Seat 5: komarkoff folded on the Flop
+Seat 6: dimon4egg.R folded before Flop (didn't bet)
+Seat 7: omegasolid folded before Flop (didn't bet)
+Seat 8: Redvin33 collected ($0.18)
+Seat 9: Xamil666 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417560449:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:54:00 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Youssein86 ($5.67 in chips) 
+Seat 2: djafar63 ($2.03 in chips) 
+Seat 3: TWmountain ($2 in chips) 
+Seat 4: Gora525 ($4.02 in chips) 
+Seat 5: budzyakua ($1.95 in chips) 
+Seat 6: Redvin33 ($1.96 in chips) 
+Seat 7: Johnny24Kobe ($1.69 in chips) 
+Seat 8: dr.m-night ($2.11 in chips) 
+Seat 9: 777uliana777 ($5.98 in chips) 
+djafar63: posts small blind $0.01
+TWmountain: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4s 2s]
+Gora525: folds 
+budzyakua: folds 
+Redvin33: folds 
+Johnny24Kobe: folds 
+dr.m-night: folds 
+777uliana777: folds 
+Youssein86: raises $0.04 to $0.06
+djafar63: folds 
+TWmountain: folds 
+Uncalled bet ($0.04) returned to Youssein86
+Youssein86 collected $0.05 from pot
+Youssein86: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Seat 1: Youssein86 (button) collected ($0.05)
+Seat 2: djafar63 (small blind) folded before Flop
+Seat 3: TWmountain (big blind) folded before Flop
+Seat 4: Gora525 folded before Flop (didn't bet)
+Seat 5: budzyakua folded before Flop (didn't bet)
+Seat 6: Redvin33 folded before Flop (didn't bet)
+Seat 7: Johnny24Kobe folded before Flop (didn't bet)
+Seat 8: dr.m-night folded before Flop (didn't bet)
+Seat 9: 777uliana777 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417564027:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:54:04 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: F0ody ($1.96 in chips) 
+Seat 2: PlatinumGod ($2.13 in chips) 
+Seat 3: Dido Lopes ($2.75 in chips) 
+Seat 4: Redvin33 ($1.96 in chips) 
+Seat 5: Gelovek ($4.27 in chips) 
+Seat 6: KoAlRy ($2 in chips) 
+Seat 7: $omVac$huNuc ($1.11 in chips) 
+Seat 8: vadsagal ($1.91 in chips) 
+Seat 9: 5th Rutland ($2.78 in chips) 
+PlatinumGod: posts small blind $0.01
+Dido Lopes: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4h Ah]
+Redvin33: calls $0.02
+Gelovek: folds 
+KoAlRy: folds 
+$omVac$huNuc: folds 
+vadsagal: folds 
+5th Rutland: folds 
+F0ody: folds 
+PlatinumGod: folds 
+Dido Lopes: checks 
+*** FLOP *** [9d 4d 8d]
+Dido Lopes: checks 
+Redvin33: bets $0.02
+Dido Lopes: folds 
+Uncalled bet ($0.02) returned to Redvin33
+Redvin33 collected $0.05 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Board [9d 4d 8d]
+Seat 1: F0ody (button) folded before Flop (didn't bet)
+Seat 2: PlatinumGod (small blind) folded before Flop
+Seat 3: Dido Lopes (big blind) folded on the Flop
+Seat 4: Redvin33 collected ($0.05)
+Seat 5: Gelovek folded before Flop (didn't bet)
+Seat 6: KoAlRy folded before Flop (didn't bet)
+Seat 7: $omVac$huNuc folded before Flop (didn't bet)
+Seat 8: vadsagal folded before Flop (didn't bet)
+Seat 9: 5th Rutland folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417556743:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:53:56 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: @TOM-AK-OD ($2.77 in chips) 
+Seat 2: badboy323232 ($1.10 in chips) 
+Seat 3: KingValent96 ($2.25 in chips) 
+Seat 4: ruffell1234 ($0.75 in chips) 
+Seat 5: Redvin33 ($1.96 in chips) 
+Seat 6: zmss ($2.06 in chips) 
+Seat 7: Lityuk ($1.03 in chips) 
+Seat 8: ArgusLL ($2.53 in chips) 
+Seat 9: dumbik89 ($4.40 in chips) 
+badboy323232: posts small blind $0.01
+KingValent96: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [2h Tc]
+ruffell1234: calls $0.02
+Redvin33: folds 
+zmss: folds 
+Lityuk: folds 
+ArgusLL: folds 
+dumbik89: folds 
+@TOM-AK-OD: folds 
+badboy323232: raises $0.06 to $0.08
+KingValent96: folds 
+ruffell1234: calls $0.06
+*** FLOP *** [Js 8c 2d]
+badboy323232: bets $0.09
+ruffell1234: folds 
+Uncalled bet ($0.09) returned to badboy323232
+badboy323232 collected $0.17 from pot
+badboy323232: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.18 | Rake $0.01 
+Board [Js 8c 2d]
+Seat 1: @TOM-AK-OD (button) folded before Flop (didn't bet)
+Seat 2: badboy323232 (small blind) collected ($0.17)
+Seat 3: KingValent96 (big blind) folded before Flop
+Seat 4: ruffell1234 folded on the Flop
+Seat 5: Redvin33 folded before Flop (didn't bet)
+Seat 6: zmss folded before Flop (didn't bet)
+Seat 7: Lityuk folded before Flop (didn't bet)
+Seat 8: ArgusLL folded before Flop (didn't bet)
+Seat 9: dumbik89 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417584935:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:54:27 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: n.hby ($1.27 in chips) 
+Seat 2: BadBeat Bert ($2.73 in chips) 
+Seat 3: Redvin33 ($1.99 in chips) 
+Seat 4: morari995 ($2.61 in chips) 
+Seat 5: dealers-bf ($2.03 in chips) 
+Seat 6: setair ($1.91 in chips) 
+Seat 7: avramia1 ($2 in chips) 
+Seat 8: Calchiat ($3.51 in chips) 
+Seat 9: daniel040988 ($1 in chips) 
+BadBeat Bert: posts small blind $0.01
+Redvin33: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [7d 9h]
+morari995: folds 
+dealers-bf: folds 
+setair: folds 
+avramia1: folds 
+Calchiat: folds 
+daniel040988: folds 
+n.hby: folds 
+BadBeat Bert: folds 
+Uncalled bet ($0.01) returned to Redvin33
+Redvin33 collected $0.02 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.02 | Rake $0 
+Seat 1: n.hby (button) folded before Flop (didn't bet)
+Seat 2: BadBeat Bert (small blind) folded before Flop
+Seat 3: Redvin33 (big blind) collected ($0.02)
+Seat 4: morari995 folded before Flop (didn't bet)
+Seat 5: dealers-bf folded before Flop (didn't bet)
+Seat 6: setair folded before Flop (didn't bet)
+Seat 7: avramia1 folded before Flop (didn't bet)
+Seat 8: Calchiat folded before Flop (didn't bet)
+Seat 9: daniel040988 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417598608:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:54:42 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: dmitrychuk ($2.08 in chips) 
+Seat 2: ARISTIDO ($1.98 in chips) 
+Seat 3: Pyromode ($2.23 in chips) 
+Seat 4: kwint34b0rg ($1.59 in chips) 
+Seat 5: bungaku ($2.08 in chips) 
+Seat 6: leprekon71 ($3.79 in chips) 
+Seat 7: Redvin33 ($2 in chips) 
+Seat 8: Aggressor7 ($2.98 in chips) 
+Seat 9: stapec ($2.02 in chips) 
+ARISTIDO: posts small blind $0.01
+Pyromode: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Jc 5s]
+kwint34b0rg: raises $0.04 to $0.06
+bungaku: folds 
+leprekon71: folds 
+Redvin33: folds 
+Aggressor7: folds 
+stapec: folds 
+dmitrychuk: folds 
+ARISTIDO: folds 
+Pyromode: folds 
+Uncalled bet ($0.04) returned to kwint34b0rg
+kwint34b0rg collected $0.05 from pot
+kwint34b0rg: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Seat 1: dmitrychuk (button) folded before Flop (didn't bet)
+Seat 2: ARISTIDO (small blind) folded before Flop
+Seat 3: Pyromode (big blind) folded before Flop
+Seat 4: kwint34b0rg collected ($0.05)
+Seat 5: bungaku folded before Flop (didn't bet)
+Seat 6: leprekon71 folded before Flop (didn't bet)
+Seat 7: Redvin33 folded before Flop (didn't bet)
+Seat 8: Aggressor7 folded before Flop (didn't bet)
+Seat 9: stapec folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417603075:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:54:47 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: 007wins ($5.09 in chips) 
+Seat 2: Le Clienth ($2 in chips) 
+Seat 3: VV888V ($0.89 in chips) 
+Seat 4: Redvin33 ($2 in chips) 
+Seat 5: kosciej ($2.21 in chips) 
+Seat 6: pedro0795 ($2.44 in chips) 
+Seat 7: rjz88 ($2 in chips) 
+Seat 8: 19Vladimir83 ($11.84 in chips) 
+Seat 9: Nico Belik ($1.90 in chips) 
+Le Clienth: posts small blind $0.01
+VV888V: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4s 6s]
+Redvin33: folds 
+kosciej: folds 
+pedro0795: folds 
+rjz88: folds 
+19Vladimir83: folds 
+Nico Belik: raises $0.02 to $0.04
+007wins: folds 
+Le Clienth: folds 
+VV888V: folds 
+Uncalled bet ($0.02) returned to Nico Belik
+Nico Belik collected $0.05 from pot
+Nico Belik: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Seat 1: 007wins (button) folded before Flop (didn't bet)
+Seat 2: Le Clienth (small blind) folded before Flop
+Seat 3: VV888V (big blind) folded before Flop
+Seat 4: Redvin33 folded before Flop (didn't bet)
+Seat 5: kosciej folded before Flop (didn't bet)
+Seat 6: pedro0795 folded before Flop (didn't bet)
+Seat 7: rjz88 folded before Flop (didn't bet)
+Seat 8: 19Vladimir83 folded before Flop (didn't bet)
+Seat 9: Nico Belik collected ($0.05)
+
+
+
+PokerStars Zoom Hand #173417612130:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:54:57 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Filonous ($4.25 in chips) 
+Seat 2: Redvin33 ($2 in chips) 
+Seat 3: babisant ($9.61 in chips) 
+Seat 4: Nikich_ua ($2.08 in chips) 
+Seat 5: thomasdibdin ($2.16 in chips) 
+Seat 6: Flleys ($2.63 in chips) 
+Seat 7: djafar63 ($2.20 in chips) 
+Seat 8: KingValent96 ($2.09 in chips) 
+Seat 9: ARISTIDO ($1.97 in chips) 
+Redvin33: posts small blind $0.01
+babisant: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [6s 4c]
+Nikich_ua: folds 
+thomasdibdin: folds 
+Flleys: folds 
+djafar63: folds 
+KingValent96: folds 
+ARISTIDO: folds 
+Filonous: raises $0.03 to $0.05
+Redvin33: folds 
+babisant: folds 
+Uncalled bet ($0.03) returned to Filonous
+Filonous collected $0.05 from pot
+Filonous: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.05 | Rake $0 
+Seat 1: Filonous (button) collected ($0.05)
+Seat 2: Redvin33 (small blind) folded before Flop
+Seat 3: babisant (big blind) folded before Flop
+Seat 4: Nikich_ua folded before Flop (didn't bet)
+Seat 5: thomasdibdin folded before Flop (didn't bet)
+Seat 6: Flleys folded before Flop (didn't bet)
+Seat 7: djafar63 folded before Flop (didn't bet)
+Seat 8: KingValent96 folded before Flop (didn't bet)
+Seat 9: ARISTIDO folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417605746:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:54:50 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: sewq55 ($1.06 in chips) 
+Seat 2: rivens21 ($4.30 in chips) 
+Seat 3: Moltyaninov ($0.81 in chips) 
+Seat 4: kaytho ($1.84 in chips) 
+Seat 5: Redvin33 ($2 in chips) 
+Seat 6: komarkoff ($2.01 in chips) 
+Seat 7: marielou2004 ($2.08 in chips) 
+Seat 8: stapec ($2.02 in chips) 
+Seat 9: Brevik ($2.02 in chips) 
+rivens21: posts small blind $0.01
+Moltyaninov: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Qh 6c]
+kaytho: raises $0.04 to $0.06
+Redvin33: folds 
+komarkoff: folds 
+marielou2004: calls $0.06
+stapec: raises $0.14 to $0.20
+Brevik: folds 
+sewq55: folds 
+rivens21: folds 
+Moltyaninov: folds 
+kaytho: folds 
+marielou2004: folds 
+Uncalled bet ($0.14) returned to stapec
+stapec collected $0.21 from pot
+stapec: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.21 | Rake $0 
+Seat 1: sewq55 (button) folded before Flop (didn't bet)
+Seat 2: rivens21 (small blind) folded before Flop
+Seat 3: Moltyaninov (big blind) folded before Flop
+Seat 4: kaytho folded before Flop
+Seat 5: Redvin33 folded before Flop (didn't bet)
+Seat 6: komarkoff folded before Flop (didn't bet)
+Seat 7: marielou2004 folded before Flop
+Seat 8: stapec collected ($0.21)
+Seat 9: Brevik folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #173417614908:  Hold'em No Limit ($0.01/$0.02) - 2017/07/23 15:55:00 ET
+Table 'McNaught' 9-max Seat #1 is the button
+Seat 1: Redvin33 ($1.99 in chips) 
+Seat 2: ocrimus ($3.29 in chips) 
+Seat 3: NeverAce33 ($2.09 in chips) 
+Seat 4: TanzeArango ($2.68 in chips) 
+Seat 5: hanspoker ($2.56 in chips) 
+Seat 6: dimon4egg.R ($4.47 in chips) 
+Seat 7: lilou301 ($2.37 in chips) 
+Seat 8: setair ($1.91 in chips) 
+Seat 9: MrVavrek ($2 in chips) 
+ocrimus: posts small blind $0.01
+NeverAce33: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Kc 9d]
+TanzeArango: folds 
+hanspoker: folds 
+dimon4egg.R: folds 
+lilou301: folds 
+setair: folds 
+MrVavrek: folds 
+Redvin33: raises $0.04 to $0.06
+ocrimus: folds 
+NeverAce33: calls $0.04
+*** FLOP *** [9c 4s 9s]
+NeverAce33: checks 
+Redvin33: checks 
+*** TURN *** [9c 4s 9s] [8s]
+NeverAce33: bets $0.04
+Redvin33: calls $0.04
+*** RIVER *** [9c 4s 9s 8s] [Ah]
+NeverAce33: bets $0.10
+Redvin33: raises $0.10 to $0.20
+NeverAce33: raises $1.79 to $1.99 and is all-in
+Redvin33: calls $1.69 and is all-in
+Uncalled bet ($0.10) returned to NeverAce33
+*** SHOW DOWN ***
+NeverAce33: shows [Qs As] (a flush, Ace high)
+Redvin33: shows [Kc 9d] (three of a kind, Nines)
+NeverAce33 collected $3.85 from pot
+*** SUMMARY ***
+Total pot $3.99 | Rake $0.14 
+Board [9c 4s 9s 8s Ah]
+Seat 1: Redvin33 (button) showed [Kc 9d] and lost with three of a kind, Nines
+Seat 2: ocrimus (small blind) folded before Flop
+Seat 3: NeverAce33 (big blind) showed [Qs As] and won ($3.85) with a flush, Ace high
+Seat 4: TanzeArango folded before Flop (didn't bet)
+Seat 5: hanspoker folded before Flop (didn't bet)
+Seat 6: dimon4egg.R folded before Flop (didn't bet)
+Seat 7: lilou301 folded before Flop (didn't bet)
+Seat 8: setair folded before Flop (didn't bet)
+Seat 9: MrVavrek folded before Flop (didn't bet)
+
+
+

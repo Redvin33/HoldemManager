@@ -1,0 +1,328 @@
+﻿PokerStars Zoom Hand #172846620162:  Omaha Pot Limit ($0.01/$0.02) - 2017/07/10 9:21:40 ET
+Table 'Lovejoy' 6-max Seat #1 is the button
+Seat 1: ChepelevV ($2 in chips) 
+Seat 2: King Bolete ($3.63 in chips) 
+Seat 3: Redvin33 ($1.50 in chips) 
+Seat 4: Olgana777 ($2.23 in chips) 
+Seat 5: 8Don_Mare8 ($2.15 in chips) 
+Seat 6: darklight25 ($3.03 in chips) 
+King Bolete: posts small blind $0.01
+Redvin33: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Ts Qc 4s Kc]
+Olgana777: folds 
+8Don_Mare8: raises $0.05 to $0.07
+darklight25: folds 
+ChepelevV: folds 
+King Bolete: calls $0.06
+Redvin33: calls $0.05
+*** FLOP *** [7h Ad Qh]
+King Bolete: checks 
+Redvin33: bets $0.10
+8Don_Mare8: folds 
+King Bolete: folds 
+Uncalled bet ($0.10) returned to Redvin33
+Redvin33 collected $0.20 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.21 | Rake $0.01 
+Board [7h Ad Qh]
+Seat 1: ChepelevV (button) folded before Flop (didn't bet)
+Seat 2: King Bolete (small blind) folded on the Flop
+Seat 3: Redvin33 (big blind) collected ($0.20)
+Seat 4: Olgana777 folded before Flop (didn't bet)
+Seat 5: 8Don_Mare8 folded on the Flop
+Seat 6: darklight25 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #172846646392:  Omaha Pot Limit ($0.01/$0.02) - 2017/07/10 9:22:31 ET
+Table 'Lovejoy' 6-max Seat #1 is the button
+Seat 1: ChepelevV ($2 in chips) 
+Seat 2: Redvin33 ($1.63 in chips) 
+Seat 3: Olgana777 ($2.22 in chips) 
+Seat 4: Anti9701 ($6.56 in chips) 
+Seat 5: saulossa ($4.08 in chips) 
+Seat 6: VCR77 ($3.41 in chips) 
+Redvin33: posts small blind $0.01
+Olgana777: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [8h Jd Td 3h]
+Anti9701: raises $0.02 to $0.04
+saulossa: folds 
+VCR77: folds 
+ChepelevV: folds 
+Redvin33: calls $0.03
+Olgana777: folds 
+*** FLOP *** [8d 6d Ah]
+Redvin33: bets $0.05
+Anti9701: calls $0.05
+*** TURN *** [8d 6d Ah] [Ac]
+Redvin33: checks 
+Anti9701: bets $0.19
+Redvin33: folds 
+Uncalled bet ($0.19) returned to Anti9701
+Anti9701 collected $0.19 from pot
+Anti9701: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.20 | Rake $0.01 
+Board [8d 6d Ah Ac]
+Seat 1: ChepelevV (button) folded before Flop (didn't bet)
+Seat 2: Redvin33 (small blind) folded on the Turn
+Seat 3: Olgana777 (big blind) folded before Flop
+Seat 4: Anti9701 collected ($0.19)
+Seat 5: saulossa folded before Flop (didn't bet)
+Seat 6: VCR77 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #172846680504:  Omaha Pot Limit ($0.01/$0.02) - 2017/07/10 9:23:37 ET
+Table 'Lovejoy' 6-max Seat #1 is the button
+Seat 1: 8Don_Mare8 ($9.18 in chips) 
+Seat 2: ErnieTaylor ($2.04 in chips) 
+Seat 3: DURA_LOSHAD ($6.15 in chips) 
+Seat 4: saulossa ($4.37 in chips) 
+Seat 5: ChuvChuv ($1.73 in chips) 
+Seat 6: Redvin33 ($1.51 in chips) 
+ErnieTaylor: posts small blind $0.01
+DURA_LOSHAD: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Ts As 5h 2c]
+saulossa: folds 
+ChuvChuv: folds 
+Redvin33: raises $0.02 to $0.04
+8Don_Mare8: folds 
+ErnieTaylor: raises $0.10 to $0.14
+DURA_LOSHAD: folds 
+Redvin33: folds 
+Uncalled bet ($0.10) returned to ErnieTaylor
+ErnieTaylor collected $0.10 from pot
+ErnieTaylor: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.10 | Rake $0 
+Seat 1: 8Don_Mare8 (button) folded before Flop (didn't bet)
+Seat 2: ErnieTaylor (small blind) collected ($0.10)
+Seat 3: DURA_LOSHAD (big blind) folded before Flop
+Seat 4: saulossa folded before Flop (didn't bet)
+Seat 5: ChuvChuv folded before Flop (didn't bet)
+Seat 6: Redvin33 folded before Flop
+
+
+
+PokerStars Zoom Hand #172846671231:  Omaha Pot Limit ($0.01/$0.02) - 2017/07/10 9:23:19 ET
+Table 'Lovejoy' 6-max Seat #1 is the button
+Seat 1: Redvin33 ($1.53 in chips) 
+Seat 2: ChuvChuv ($1.74 in chips) 
+Seat 3: 1nnuendo ($5.07 in chips) 
+Seat 4: XxUserIDxX ($2 in chips) 
+Seat 5: Olgana777 ($5.80 in chips) 
+Seat 6: VGTWS ($2.47 in chips) 
+ChuvChuv: posts small blind $0.01
+1nnuendo: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Kd 5c 3d 6h]
+XxUserIDxX: folds 
+Olgana777: folds 
+VGTWS: raises $0.02 to $0.04
+Redvin33: folds 
+ChuvChuv: folds 
+1nnuendo: calls $0.02
+*** FLOP *** [Kh 7s 6c]
+1nnuendo: checks 
+VGTWS: checks 
+*** TURN *** [Kh 7s 6c] [9h]
+1nnuendo: checks 
+VGTWS: checks 
+*** RIVER *** [Kh 7s 6c 9h] [Qh]
+1nnuendo: checks 
+VGTWS: bets $0.09
+1nnuendo: folds 
+Uncalled bet ($0.09) returned to VGTWS
+VGTWS collected $0.09 from pot
+VGTWS: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.09 | Rake $0 
+Board [Kh 7s 6c 9h Qh]
+Seat 1: Redvin33 (button) folded before Flop (didn't bet)
+Seat 2: ChuvChuv (small blind) folded before Flop
+Seat 3: 1nnuendo (big blind) folded on the River
+Seat 4: XxUserIDxX folded before Flop (didn't bet)
+Seat 5: Olgana777 folded before Flop (didn't bet)
+Seat 6: VGTWS collected ($0.09)
+
+
+
+PokerStars Zoom Hand #172846674298:  Omaha Pot Limit ($0.01/$0.02) - 2017/07/10 9:23:25 ET
+Table 'Lovejoy' 6-max Seat #1 is the button
+Seat 1: JaMmYsTyLe7 ($1 in chips) 
+Seat 2: R0Y_NELS0N ($2 in chips) 
+Seat 3: Redvin33 ($1.53 in chips) 
+Seat 4: rubaartjom ($1.98 in chips) 
+Seat 5: wintop11 ($2.84 in chips) 
+Seat 6: gaida07 ($5.63 in chips) 
+R0Y_NELS0N: posts small blind $0.01
+Redvin33: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4h 2d 2h 5s]
+rubaartjom: folds 
+wintop11: raises $0.05 to $0.07
+gaida07: folds 
+JaMmYsTyLe7: folds 
+R0Y_NELS0N: calls $0.06
+Redvin33: folds 
+*** FLOP *** [Qh 7d Ts]
+R0Y_NELS0N: checks 
+wintop11: checks 
+*** TURN *** [Qh 7d Ts] [Kc]
+R0Y_NELS0N: checks 
+wintop11: checks 
+*** RIVER *** [Qh 7d Ts Kc] [Kh]
+R0Y_NELS0N: checks 
+wintop11: checks 
+*** SHOW DOWN ***
+R0Y_NELS0N: shows [6c 5d 4d Qc] (two pair, Kings and Queens)
+wintop11: shows [Ac 5c Ah 3s] (two pair, Aces and Kings)
+wintop11 collected $0.15 from pot
+*** SUMMARY ***
+Total pot $0.16 | Rake $0.01 
+Board [Qh 7d Ts Kc Kh]
+Seat 1: JaMmYsTyLe7 (button) folded before Flop (didn't bet)
+Seat 2: R0Y_NELS0N (small blind) showed [6c 5d 4d Qc] and lost with two pair, Kings and Queens
+Seat 3: Redvin33 (big blind) folded before Flop
+Seat 4: rubaartjom folded before Flop (didn't bet)
+Seat 5: wintop11 showed [Ac 5c Ah 3s] and won ($0.15) with two pair, Aces and Kings
+Seat 6: gaida07 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #172846666609:  Omaha Pot Limit ($0.01/$0.02) - 2017/07/10 9:23:10 ET
+Table 'Lovejoy' 6-max Seat #1 is the button
+Seat 1: goddfellah ($7.74 in chips) 
+Seat 2: fusel37 ($2.77 in chips) 
+Seat 3: BenCampbel10 ($2.18 in chips) 
+Seat 4: belfiori ($2.04 in chips) 
+Seat 5: Scotpilgrim7 ($1.84 in chips) 
+Seat 6: Redvin33 ($1.54 in chips) 
+fusel37: posts small blind $0.01
+BenCampbel10: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [4d 3s 7s 2d]
+belfiori: folds 
+Scotpilgrim7: folds 
+Redvin33: folds 
+goddfellah: raises $0.05 to $0.07
+fusel37: raises $0.16 to $0.23
+BenCampbel10: folds 
+goddfellah: calls $0.16
+*** FLOP *** [9d 6s 7d]
+fusel37: bets $0.24
+goddfellah: raises $0.94 to $1.18
+fusel37: raises $1.36 to $2.54 and is all-in
+goddfellah: calls $1.36
+*** TURN *** [9d 6s 7d] [As]
+*** RIVER *** [9d 6s 7d As] [Qc]
+*** SHOW DOWN ***
+fusel37: shows [Td Qd 8c Jd] (a straight, Six to Ten)
+goddfellah: shows [Ad 5d 9h 2h] (two pair, Aces and Nines)
+fusel37 collected $5.38 from pot
+*** SUMMARY ***
+Total pot $5.56 | Rake $0.18 
+Board [9d 6s 7d As Qc]
+Seat 1: goddfellah (button) showed [Ad 5d 9h 2h] and lost with two pair, Aces and Nines
+Seat 2: fusel37 (small blind) showed [Td Qd 8c Jd] and won ($5.38) with a straight, Six to Ten
+Seat 3: BenCampbel10 (big blind) folded before Flop
+Seat 4: belfiori folded before Flop (didn't bet)
+Seat 5: Scotpilgrim7 folded before Flop (didn't bet)
+Seat 6: Redvin33 folded before Flop (didn't bet)
+
+
+
+PokerStars Zoom Hand #172846669169:  Omaha Pot Limit ($0.01/$0.02) - 2017/07/10 9:23:15 ET
+Table 'Lovejoy' 6-max Seat #1 is the button
+Seat 1: K.Paramon ($1.32 in chips) 
+Seat 2: Redvin33 ($1.54 in chips) 
+Seat 3: saulossa ($3.48 in chips) 
+Seat 4: Docevil24 ($2.67 in chips) 
+Seat 5: vitor-950622 ($3 in chips) 
+Seat 6: koulis1313 ($0.92 in chips) 
+Redvin33: posts small blind $0.01
+saulossa: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [6d 4d Th 2c]
+Docevil24: raises $0.05 to $0.07
+vitor-950622: calls $0.07
+koulis1313: calls $0.07
+K.Paramon: folds 
+Redvin33: folds 
+saulossa: folds 
+*** FLOP *** [7d 5s 8s]
+Docevil24: bets $0.17
+vitor-950622: raises $0.45 to $0.62
+koulis1313: raises $0.23 to $0.85 and is all-in
+Docevil24: calls $0.68
+vitor-950622: calls $0.23
+*** TURN *** [7d 5s 8s] [7h]
+Docevil24: checks 
+vitor-950622: bets $1.34
+Docevil24: folds 
+Uncalled bet ($1.34) returned to vitor-950622
+*** RIVER *** [7d 5s 8s 7h] [9d]
+*** SHOW DOWN ***
+vitor-950622: shows [2s Js 8c 8h] (a full house, Eights full of Sevens)
+koulis1313: shows [9h 6h 7c Ah] (a full house, Sevens full of Nines)
+vitor-950622 collected $2.70 from pot
+*** SUMMARY ***
+Total pot $2.79 | Rake $0.09 
+Board [7d 5s 8s 7h 9d]
+Seat 1: K.Paramon (button) folded before Flop (didn't bet)
+Seat 2: Redvin33 (small blind) folded before Flop
+Seat 3: saulossa (big blind) folded before Flop
+Seat 4: Docevil24 folded on the Turn
+Seat 5: vitor-950622 showed [2s Js 8c 8h] and won ($2.70) with a full house, Eights full of Sevens
+Seat 6: koulis1313 showed [9h 6h 7c Ah] and lost with a full house, Sevens full of Nines
+
+
+
+PokerStars Zoom Hand #172846689816:  Omaha Pot Limit ($0.01/$0.02) - 2017/07/10 9:23:55 ET
+Table 'Lovejoy' 6-max Seat #1 is the button
+Seat 1: ErnieTaylor ($2 in chips) 
+Seat 2: 1nnuendo ($2.65 in chips) 
+Seat 3: Olgana777 ($2 in chips) 
+Seat 4: tetsu1216 ($0.92 in chips) 
+Seat 5: Redvin33 ($1.47 in chips) 
+Seat 6: Ohmderohm ($1.75 in chips) 
+1nnuendo: posts small blind $0.01
+Olgana777: posts big blind $0.02
+*** HOLE CARDS ***
+Dealt to Redvin33 [Qd Qh 7d 4h]
+tetsu1216: raises $0.04 to $0.06
+Redvin33: calls $0.06
+Ohmderohm: folds 
+ErnieTaylor: folds 
+1nnuendo: folds 
+Olgana777: folds 
+*** FLOP *** [Ac 7s Ah]
+tetsu1216: bets $0.12
+Redvin33: calls $0.12
+*** TURN *** [Ac 7s Ah] [Ad]
+tetsu1216: checks 
+Redvin33: checks 
+*** RIVER *** [Ac 7s Ah Ad] [5c]
+tetsu1216: checks 
+Redvin33: bets $0.14
+tetsu1216: folds 
+Uncalled bet ($0.14) returned to Redvin33
+Redvin33 collected $0.38 from pot
+Redvin33: doesn't show hand 
+*** SUMMARY ***
+Total pot $0.39 | Rake $0.01 
+Board [Ac 7s Ah Ad 5c]
+Seat 1: ErnieTaylor (button) folded before Flop (didn't bet)
+Seat 2: 1nnuendo (small blind) folded before Flop
+Seat 3: Olgana777 (big blind) folded before Flop
+Seat 4: tetsu1216 folded on the River
+Seat 5: Redvin33 collected ($0.38)
+Seat 6: Ohmderohm folded before Flop (didn't bet)
+
+
+

@@ -69,7 +69,7 @@ public class Turn {
         {
             System.out.println("Saved " + tyyppi + " " + handid + " to database.");
             for (Action action : actions) {
-                action.Save(conn, handid);
+                action.Save(conn, handid, tyyppi);
             }
         }
     }

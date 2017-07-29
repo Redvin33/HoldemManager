@@ -73,6 +73,8 @@ public class Hand {
     }
 
     public void Save(Connection conn) {
+        System.out.println(id +" RRRRRRRRRRRRRRRRR");
+        System.out.println("SQL: " + "INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');");
         if(Query.SQL("INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');" , conn)) {
             for (Turn turn : turns) {
                 turn.Save(conn);
@@ -93,6 +95,8 @@ public class Hand {
             } catch (SQLException e) {
                 System.out.println(e.getMessage());
             }
+        } else {
+            System.out.println("mitä helvettiä");
         }
 
     }

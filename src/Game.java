@@ -25,15 +25,15 @@ public class Game implements Runnable {
 
     //todo Better regex x4
     //Matches 'PokerStars Zoom Hand #171235037798:  Hold'em No Limit ($0.01/$0.02) - 2017/06/02 5:35:03 ET'
-    public static Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+)\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+)");
+    public static Pattern handPattern = Pattern.compile("(.+)#(\\d+):\\s+(['A-Za-z\\s]+)\\(([$|€|£])(\\d+\\.\\d+)\\/[$|€|£](\\d+\\.\\d+).?\\w+?\\) \\- (\\d+\\/\\d+\\/\\d+) (\\d+:\\d+:\\d+) (\\w+).{0,60}");
     //Matches 'Table 'McNaught' 9-max Seat #1 is the button
     public static Pattern tablePattern = Pattern.compile("Table.['](.+)['].(\\d+)(.+)");
     //Matches 'Seat 1: hirsch262 ($2.10 in chips)"
-    public static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(\\S+).in.chips\\)");
+    public static Pattern seatPattern = Pattern.compile("Seat.(\\d+):.(.+)\\(([$|€|£])(\\S+).in.chips\\).?");
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
     public static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
-    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).?([$|€|£])?(\\d+\\.\\d+)?(.to.)?([$|€|£])?(\\d+\\.\\d+)?");
+    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).?([$|€|£])?(\\d+\\.\\d+)?(.to.)?([$|€|£])?(\\d+\\.\\d+)?.?");
     //Matches holecards
     public static Pattern holecardsPattern = Pattern.compile("(Seat.\\d+:|.+:|.*).?(.*)(shows|mucked|Dealt.to).(.*)\\[(.*)\\]");
     //Matches holecards for mucked button/SB/BB player
@@ -77,7 +77,7 @@ public class Game implements Runnable {
         Table table = new Table("Default", 0);
         HashMap<Player, ArrayList<Card>> curr_players = new HashMap<>();
         ArrayList<Turn> current = new ArrayList<>();
-        /*
+
         String url = "jdbc:postgresql://localhost:5432/holdemManager3";
         String user = "postgres";
         String password = "";
@@ -85,10 +85,11 @@ public class Game implements Runnable {
         try {
             conn = DriverManager.getConnection(url, user, password);
             conn.setAutoCommit(false);
+            System.out.println("CONNECTED");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        */
+
 
 
         while (running) {
@@ -97,6 +98,7 @@ public class Game implements Runnable {
                     stop();
                 }
                 if (queue.size() > 0) {
+                    System.out.println("TURNS: " +turns.size());
                     String line = queue.take();
 
                     Matcher handMatcher = handPattern.matcher(line);
@@ -107,10 +109,11 @@ public class Game implements Runnable {
                     Matcher holecardMatcher = holecardsPattern.matcher(line);
                     Matcher muckedMatcher = muckedcardsPattern.matcher(line);
                     System.out.println("LINE: " + line);
-                    //System.out.println(Analytics.buttonbet("Redvin33", conn)+ "%");
+                    System.out.println(Analytics.buttonbet("Redvin33", conn)+ "%");
                     if (handMatcher.matches()) {
-
+                        System.out.println("MATCH FOUND!: "+ handMatcher.group(3));
                         if (turns.size() >= 3) {
+                            System.out.println("päästiin");
                             try {
                                 ArrayList<Turn> turns_param = new ArrayList<>();
                                 for (Turn turn : current) {
@@ -125,13 +128,13 @@ public class Game implements Runnable {
                                 }
 
                                 Hand hand = new Hand(handName, handid, gameMode, currency, minStake, maxStake, date, timezone, turns_param, table, players_param);
-                                hand.printStartingHands();
+
                                 current.clear();
                                 curr_players.clear();
                                 System.out.println("Created hand " + hand);
                                 hand.printActions();
                                 hands.add(hand);
-                                //hand.Save(conn);
+                                hand.Save(conn);
 
                             } catch (ParseException e) {
                                 e.printStackTrace();
@@ -154,21 +157,24 @@ public class Game implements Runnable {
                         phasestring = "";
                         if (turns.size() == 0) {
                             System.out.println("PEKRLE");
-                        /*
-                        Query.SQL("INSERT INTO gamemodes(gamemode, currency, minstake, maxstake) VALUES('"+gameMode.replace("'", "")+"', '" + currency +"', " +minStake +", " +maxStake +");", conn);
-                        try {
-                            conn.commit();
-                        } catch (SQLException e) {
-                            System.out.println(e.getMessage());
-                        }
-                        */
+
+                            Query.SQL("INSERT INTO gamemodes(gamemode, currency, minstake, maxstake) VALUES('"+gameMode.replace("'", "")+"', '" + currency +"', " +minStake +", " +maxStake +");", conn);
+                            try {
+                                conn.commit();
+                            } catch (SQLException e) {
+                                System.out.println(e.getMessage());
+                            }
+
                         }
 
                     } else if (tableMatcher.matches()) {
                         int playerAmount = Integer.parseInt(tableMatcher.group(2));
                         table = new Table(tableMatcher.group(1), playerAmount);
-                        //table.Save(conn);
+
+                        table.Save(conn);
+
                     } else if (seatMatcher.matches()) {
+                        System.out.println("SEATED:");
                         int seatNumber = Integer.parseInt(seatMatcher.group(1));
                         String name = seatMatcher.group(2).trim();
 
@@ -180,7 +186,8 @@ public class Game implements Runnable {
                         if (!players.keySet().contains(name)) {
                             Player player = new Player(name);
                             players.put(name, player);
-                            //Query.SQL("INSERT into players(name) VALUES ('"+name+"');", conn);
+                            System.out.println("SQL: " + "INSERT into players(name) VALUES ('"+name+"');");
+                            Query.SQL("INSERT into players(name) VALUES ('"+name+"');", conn);
                         }
                         table.addSeat(players.get(name), seatNumber);
                         ArrayList<Card> holecards = new ArrayList<>();

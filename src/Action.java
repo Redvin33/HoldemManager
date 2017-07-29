@@ -45,7 +45,7 @@ public class Action {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-
+        System.out.println("ACTION:   " +"INSERT into turn_player_action(player_name, action, turn_id, amount) VALUES('"+ player +"', '" + action +"', " + i +", " +amount +");");
         Query.SQL("INSERT into turn_player_action(player_name, action, turn_id, amount) VALUES('"+ player +"', '" + action +"', " + i +", " +amount +");"  , conn);
 
     }

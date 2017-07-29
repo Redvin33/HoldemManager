@@ -44,7 +44,9 @@ public class Table {
     }
 
     public void Save(Connection conn) {
+        System.out.println(tableName);
         Query.SQL("INSERT INTO tables(name) values('"+ tableName +"');", conn);
+        System.out.println("moi");
 
     }
 

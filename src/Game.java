@@ -112,7 +112,7 @@ public class Game implements Runnable {
                     System.out.println(Analytics.buttonbet("Redvin33", conn)+ "%");
                     if (handMatcher.matches()) {
                         System.out.println("MATCH FOUND!: "+ handMatcher.group(3));
-                        if (turns.size() >= 3) {
+                        if (turns.size() >= 1) {
                             System.out.println("päästiin");
                             try {
                                 ArrayList<Turn> turns_param = new ArrayList<>();
@@ -186,8 +186,13 @@ public class Game implements Runnable {
                         if (!players.keySet().contains(name)) {
                             Player player = new Player(name);
                             players.put(name, player);
-                            System.out.println("SQL: " + "INSERT into players(name) VALUES ('"+name+"');");
+
                             Query.SQL("INSERT into players(name) VALUES ('"+name+"');", conn);
+                            try {
+                                conn.commit();
+                            } catch (SQLException e) {
+                                System.out.println(e.getMessage());
+                            }
                         }
                         table.addSeat(players.get(name), seatNumber);
                         ArrayList<Card> holecards = new ArrayList<>();

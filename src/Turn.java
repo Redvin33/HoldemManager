@@ -2,6 +2,7 @@
  * Created by Lauri on 23.6.2017.
  */
 
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.sql.Connection;
@@ -67,6 +68,8 @@ public class Turn {
         }
         if(Query.SQL("INSERT into turns(site_id, phase, communitycards) VALUES('"+ handid +"', '"+tyyppi+ "', '{"+ String.join(", ", community) +"}');", conn ))
         {
+
+
             System.out.println("Saved " + tyyppi + " " + handid + " to database.");
             for (Action action : actions) {
                 action.Save(conn, handid, tyyppi);

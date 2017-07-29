@@ -8,6 +8,7 @@ import java.sql.SQLException;
 public  class Query {
     public static boolean SQL(String sql, Connection conn)
     {
+        System.out.println("SQL:  " +sql);
         try {
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(sql);

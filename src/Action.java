@@ -35,6 +35,7 @@ public class Action {
     }
 
     public void Save(Connection conn, long turn_id, String phase) {
+        System.out.println(turn_id+"  " + phase+"TTTTTT");
         ResultSet rs = Query.result("Select id from turns where site_id='"+turn_id+"' and phase ='"+phase+"';", conn);
         int i = 0;
         try {

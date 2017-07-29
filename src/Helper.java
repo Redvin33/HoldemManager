@@ -4,6 +4,16 @@
 public class Helper {
 
     /**
+     * Prints message to console if debug is set to true
+     * @param msg Debug message
+     */
+    public static void debug(String msg){
+        if(Main.DEBUG){
+            System.out.println(msg);
+        }
+    }
+
+    /**
      * Removes unicode whitespaces from a String
      * @param str String to be modified
      * @return  String without whitespaces

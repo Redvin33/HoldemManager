@@ -3,6 +3,9 @@
 # Dia:
 .dia~
 
+#Config
+config.properties
+
 #Garbage
 jdbc-drivers.xml
 
@@ -70,3 +73,6 @@ fabric.properties
 .idea/sonarlint
 
 # End of https://www.gitignore.io/api/intellij
+.idea/inspectionProfiles/
+lib/postgresql-42.1.2-javadoc.jar
+lib/postgresql-42.1.2.jar

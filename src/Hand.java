@@ -12,9 +12,16 @@ public class Hand{
 
     private String handName;
     private long id;
-    private String gameMode;
+    private GameMode gameMode;
     private Currency currency;
-    private double minStake;
+    private Date date;
+    private ArrayList<Turn> turns;
+    private ArrayList<Player> players;
+    private Table table;
+
+    public Currency getCurrency() {
+        return currency;
+    }
 
     public String getHandName() {
         return handName;
@@ -32,11 +39,11 @@ public class Hand{
         this.id = id;
     }
 
-    public String getGameMode() {
+    public GameMode getGameMode() {
         return gameMode;
     }
 
-    public void setGameMode(String gameMode) {
+    public void setGameMode(GameMode gameMode) {
         this.gameMode = gameMode;
     }
 
@@ -56,21 +63,15 @@ public class Hand{
         this.table = table;
     }
 
-    private double maxStake;
-    private Date date;
-    private ArrayList<Turn> turns;
-    private HashMap<Player, ArrayList<Card>> players;
-    private Table table;
-    public Hand(String handName, long id, String gameMode, String currency, double minStake, double maxStake, Date date, String timezone, ArrayList<Turn> turns, Table table, HashMap<Player, ArrayList<Card>> players) throws ParseException{
+    public Hand(String handName, long id, GameMode gameMode, String currency, String date, String timezone) throws ParseException{
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;
-        this.minStake = minStake;
-        this.maxStake = maxStake;
-        this.turns = turns;
+        this.turns = new ArrayList<>();
         this.table = table;
-        this.players = players;
+        this.players = new ArrayList<>();
         //Symbols are converted into currency code.
+
         switch (currency){
             case "$":
                 this.currency = Currency.getInstance("USD");
@@ -82,6 +83,7 @@ public class Hand{
                 this.currency = Currency.getInstance("GBP");
                 break;
         }
+
         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
         //Sometimes timezones have multiple meanings, list them here.
         switch (timezone){
@@ -92,7 +94,7 @@ public class Hand{
                 format.setTimeZone(TimeZone.getTimeZone(timezone));
                 break;
         }
-        this.date = date;
+        this.date = format.parse(date);
 
 
     }
@@ -104,7 +106,7 @@ public class Hand{
         }
 
     }
-
+    /*
     public void printStartingHands() {
 
         System.out.println("Hand "+ id + " starting hands");
@@ -112,6 +114,7 @@ public class Hand{
             System.out.println(player.getName() +" ["+players.get(player).get(0).getCard() +"] [" + players.get(player).get(1).getCard()+"]");
         }
     }
+    */
     /*
     public void Save(Connection conn) {
         System.out.println(id +" RRRRRRRRRRRRRRRRR");
@@ -145,6 +148,6 @@ public class Hand{
 
     @Override
     public String toString() {
-        return handName + " #" + id + ", " + gameMode + ": ("+currency+" "+minStake+"/"+maxStake+") " + date;
+        return handName + " #" + id + ", " + gameMode + date;
     }
 }

@@ -2,9 +2,15 @@
  * Created by Lauri on 27.6.2017.
  */
 public class Seat {
+
     Player player;
     int seatNumber;
     String role;
+
+    public Player getPlayer() {
+        return player;
+    }
+
     public Seat(Player player, int seatNumber) {
         this.player = player;
         this.seatNumber = seatNumber;

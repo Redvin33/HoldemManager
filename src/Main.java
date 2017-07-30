@@ -1,7 +1,13 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class Main {
 
     public static boolean DEBUG = true;
     public static void main(String[] args) {
+
 
         FolderMonitor monitor = new FolderMonitor(args[0]);
         Thread m1 = new Thread(monitor);

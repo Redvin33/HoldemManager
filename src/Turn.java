@@ -15,6 +15,23 @@ public class Turn {
 
     String tyyppi;
     ArrayList<Action> actions;
+
+    public void setTyyppi(String tyyppi) {
+        this.tyyppi = tyyppi;
+    }
+
+    public void setHandid(long handid) {
+        this.handid = handid;
+    }
+
+    public ArrayList<Card> getTablecards() {
+        return tablecards;
+    }
+
+    public void setTablecards(ArrayList<Card> tablecards) {
+        this.tablecards = tablecards;
+    }
+
     ArrayList<Card> tablecards;
     long handid;
 
@@ -58,7 +75,7 @@ public class Turn {
         System.out.println(tyyppi+ " " + handid +": " +printed);
         return;
     }
-
+    /*
     public void Save(Connection conn) {
         String[] community = new String[tablecards.size()];
         int i = 0;
@@ -76,5 +93,5 @@ public class Turn {
             }
         }
     }
-
+    */
 }

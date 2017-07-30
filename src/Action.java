@@ -33,7 +33,7 @@ public class Action {
     public void print() { System.out.println(player +" " + action);
         return;
     }
-
+    /*
     public void Save(Connection conn, long turn_id, String phase) {
         System.out.println(turn_id+"  " + phase+"TTTTTT");
         ResultSet rs = Query.result("Select id from turns where site_id='"+turn_id+"' and phase ='"+phase+"';", conn);
@@ -50,6 +50,6 @@ public class Action {
         Query.SQL("INSERT into turn_player_action(player_name, action, turn_id, amount) VALUES('"+ player +"', '" + action +"', " + i +", " +amount +");"  , conn);
 
     }
-
+    */
 
 }

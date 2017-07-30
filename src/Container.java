@@ -8,8 +8,6 @@ import java.util.Properties;
 
 public class Container {
 
-    private static Connection connection = null;
-
     private static Properties properties = new Properties();
 
     private static void initializeProperties() {
@@ -28,21 +26,22 @@ public class Container {
         return properties.getProperty(key);
     }
 
-    public static Connection getConnection() {
-        if (connection == null) {
-            try {
-                String url = String.format("jdbc:%s://%s:%s/%s"
-                        , getProperty("database")
-                        , getProperty("dbhost")
-                        , getProperty("dbport")
-                        , getProperty("dbname"));
-                connection = DriverManager.getConnection(url, getProperty("dbuser"), getProperty("dbpassword"));
-                connection.setAutoCommit(false);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+    public static Connection createConnection() {
+        try {
+            Connection connection;
+            String url = String.format("jdbc:%s://%s:%s/%s"
+                    , getProperty("database")
+                    , getProperty("dbhost")
+                    , getProperty("dbport")
+                    , getProperty("dbname"));
+            connection = DriverManager.getConnection(url, getProperty("dbuser"), getProperty("dbpassword"));
+            connection.setAutoCommit(false);
+            Helper.debug("Connected");
+            return connection;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
         }
-        return connection;
     }
 
     private Container() {

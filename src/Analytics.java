@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Analytics {
 
+    /*
     public static double buttonbet(String player, Connection conn) {
         ResultSet buttonhands = Query.result("Select count(hand_id) from hand_player where seat_nro=1 and playername='"+ player+"';", conn);
         int buttons = 0;
@@ -35,6 +36,7 @@ public class Analytics {
         return ((double)buttonbets1/(double)buttons)*100;
 
     }
+    */
     public static void test() {
         String url = "jdbc:postgresql://localhost:5432/holdemManager3";
         String user = "postgres";
@@ -45,7 +47,7 @@ public class Analytics {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println(buttonbet("Redvin33", conn));
+        //System.out.println(buttonbet("Redvin33", conn));
 
 
 

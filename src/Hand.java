@@ -8,13 +8,54 @@ import java.sql.SQLException;
 /**
  * Created by Jukka on 25.6.2017.
  */
-public class Hand {
+public class Hand{
 
     private String handName;
     private long id;
     private String gameMode;
     private Currency currency;
     private double minStake;
+
+    public String getHandName() {
+        return handName;
+    }
+
+    public void setHandName(String handName) {
+        this.handName = handName;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getGameMode() {
+        return gameMode;
+    }
+
+    public void setGameMode(String gameMode) {
+        this.gameMode = gameMode;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public void setTable(Table table) {
+        this.table = table;
+    }
+
     private double maxStake;
     private Date date;
     private ArrayList<Turn> turns;
@@ -71,7 +112,7 @@ public class Hand {
             System.out.println(player.getName() +" ["+players.get(player).get(0).getCard() +"] [" + players.get(player).get(1).getCard()+"]");
         }
     }
-
+    /*
     public void Save(Connection conn) {
         System.out.println(id +" RRRRRRRRRRRRRRRRR");
         System.out.println("SQL: " + "INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');");
@@ -100,6 +141,7 @@ public class Hand {
         }
 
     }
+    */
 
     @Override
     public String toString() {

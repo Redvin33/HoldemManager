@@ -14,6 +14,9 @@ public class Turn {
     }
 
     String tyyppi;
+
+
+
     ArrayList<Action> actions;
 
     public void setTyyppi(String tyyppi) {
@@ -43,7 +46,7 @@ public class Turn {
         System.out.println("Created " + tyyppi + " with ID " + handid);
     }
 
-
+    public ArrayList<Action> getActions() { return actions; }
     public String getTyyppi() {
         return tyyppi;
     }

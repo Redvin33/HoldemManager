@@ -34,7 +34,7 @@ public class Game implements Runnable {
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
     public static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
-    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).?([$|€|£])?(\\d+\\.\\d+)?(.to.)?([$|€|£])?(\\d+\\.\\d+)?.?");
+    public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).?([$|€|£])?(\\d+\\.\\d+)?.?to?.?([$|€|£])?(\\d+(?:\\.\\d+)?)?.?");
     //Matches holecards
     public static Pattern holecardsPattern = Pattern.compile("(Seat.\\d+:|.+:|.*).?(.*)(shows|mucked|Dealt.to).(.*)\\[(.*)\\]");
     //Matches holecards for mucked button/SB/BB player
@@ -128,8 +128,7 @@ public class Game implements Runnable {
                                 hand.printActions();
                                 hands.add(hand);
                                 query.save(hand);
-                                //PreparedStatement hand = con.prepareStatement();
-                                //hand.Save(conn);
+
 
                             } catch (ParseException e) {
                                 e.printStackTrace();
@@ -139,9 +138,9 @@ public class Game implements Runnable {
                         handName = handMatcher.group(1);
                         handid = Long.parseLong(handMatcher.group(2));
                         gameMode = handMatcher.group(3);
-                        //currency = handMatcher.group(4);
-                        //minStake = Double.parseDouble(handMatcher.group(5));
-                        //maxStake = Double.parseDouble(handMatcher.group(6));
+                        currency = handMatcher.group(4);
+                        minStake = Double.parseDouble(handMatcher.group(5));
+                        maxStake = Double.parseDouble(handMatcher.group(6));
                         SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                         try {
                             date = format.parse(handMatcher.group(7) + " " + handMatcher.group(8));
@@ -208,7 +207,13 @@ public class Game implements Runnable {
                         String name = actionMatcher.group(1);
                         String foldraise = actionMatcher.group(2);
                         if (actionMatcher.group(2).equals("raises")) {
-                            double i = Double.parseDouble(actionMatcher.group(7));
+                            double i = 0;
+                            System.out.println(actionMatcher.group(6));
+                            try {
+                                i = Double.parseDouble(actionMatcher.group(6));
+                            } catch (Exception e) {
+                                i = (double)(Integer.parseInt(actionMatcher.group(6)));
+                            }
                             current.get(current.size() - 1).AddAction(name, foldraise, i);
                         } else if (actionMatcher.group(3) != null) {
                             double i = Double.parseDouble(actionMatcher.group(4));

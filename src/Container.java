@@ -12,7 +12,7 @@ public class Container {
 
     private static void initializeProperties() {
         try {
-            InputStream in = new FileInputStream("config.example.properties");
+            InputStream in = new FileInputStream("config.properties");
             properties.load(in);
         } catch (IOException e) {
             e.printStackTrace();

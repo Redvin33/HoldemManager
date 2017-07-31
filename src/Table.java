@@ -43,9 +43,11 @@ public class Table {
         }
     }
 
-    public Player getPlayer(String name){
-        // TODO: 30.7.2017  HORRIBLE fix for horrible regex. extra space after name
-        name = name + ' ';
+    public Player getPlayer(String name, Boolean dirtyFix){
+        // TODO: 30.7.2017  HORRIBLE fix for horrible regex. Adds and extra space to match regexs
+        if (dirtyFix){
+            name = name + ' ';
+        }
         for (Seat s : seats){
             if (s.getPlayer().getName().equals(name)){
                 return s.getPlayer();

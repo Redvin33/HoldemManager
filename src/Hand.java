@@ -16,7 +16,7 @@ public class Hand{
     private Currency currency;
     private Date date;
     private ArrayList<Turn> turns;
-    private ArrayList<Player> players;
+    private HashMap<Player,String[]> holecards;
     private Table table;
 
     public Currency getCurrency() {
@@ -27,32 +27,16 @@ public class Hand{
         return handName;
     }
 
-    public void setHandName(String handName) {
-        this.handName = handName;
-    }
-
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public GameMode getGameMode() {
         return gameMode;
     }
 
-    public void setGameMode(GameMode gameMode) {
-        this.gameMode = gameMode;
-    }
-
     public Date getDate() {
         return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public Table getTable() {
@@ -63,15 +47,21 @@ public class Hand{
         this.table = table;
     }
 
+    public HashMap<Player, String[]> getHoldecards(){
+        return this.holecards;
+    }
+
+    public void addHolecards(Player player, String cards){
+        holecards.put(player,cards.split(" "));
+    }
+
     public Hand(String handName, long id, GameMode gameMode, String currency, String date, String timezone) throws ParseException{
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;
         this.turns = new ArrayList<>();
         this.table = table;
-        this.players = new ArrayList<>();
-        //Symbols are converted into currency code.
-
+        this.holecards = new HashMap<>();
         switch (currency){
             case "$":
                 this.currency = Currency.getInstance("USD");

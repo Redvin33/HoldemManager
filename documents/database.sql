@@ -22,11 +22,10 @@ create table table_seat(
 create table gamemodes(
   id SERIAL,
   gamemode varchar(100) unique,
-  currency varchar(10),
   minstake DOUBLE PRECISION,
   maxstake DOUBLE PRECISION,
   primary key(id),
-  unique(gamemode, currency, minstake, maxstake)
+  unique(gamemode, minstake, maxstake)
 );
 
 
@@ -39,8 +38,9 @@ create table players(
 create table hands(
   id SERIAL,
   table_name varchar(100),
+  currency varchar(10),
   gamemode_name varchar(100),
-  siteid varchar(100) unique,
+  siteid bigint unique,
   name varchar(100),
   date timestamp,
   primary key(id),
@@ -50,19 +50,19 @@ create table hands(
 
 create table turns(
   id SERIAL,
-  site_id varchar(100),
+  site_id bigint,
   phase varchar(50),
   communitycards text[],
   primary key(id),
   foreign key(site_id) references hands(siteid),
-  unique(site_id, phase)
+  unique(site_id,phase)
 
 );
 
 create table hand_player(
   id SERIAL,
   seat_nro int,
-  hand_id varchar(100),
+  hand_id bigint,
   playername varchar(100),
   cards text[],
   primary key(id),
@@ -75,10 +75,11 @@ create table turn_player_action(
   id SERIAL,
   player_name varchar(100),
   action varchar(20),
-  turn_id int,
+  site_id bigint,
+  phase varchar(10),
   amount DOUBLE PRECISION,
   primary key(id),
-  foreign key(turn_id) references turns(id),
+  foreign key(site_id,phase) references turns(site_id,phase),
   foreign key(player_name) references players(name)
 );
 

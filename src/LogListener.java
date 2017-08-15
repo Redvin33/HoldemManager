@@ -8,6 +8,7 @@ public class LogListener extends TailerListenerAdapter {
     //Viite jono-olioon
     private BlockingQueue<String> queue;
     private Game game;
+    private boolean eof = true;
 
     public LogListener(BlockingQueue queue, Game game){
         this.queue = queue;
@@ -18,6 +19,7 @@ public class LogListener extends TailerListenerAdapter {
     public void handle(String line){
         try {
             queue.put(line);
+            eof = false;
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -25,6 +27,10 @@ public class LogListener extends TailerListenerAdapter {
 
     @Override
     public void endOfFileReached(){
-        game.lastTime = System.currentTimeMillis();
+        if (!eof){
+            game.lastTime = System.currentTimeMillis();
+            eof = true;
+        }
+
     }
 }

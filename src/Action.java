@@ -2,35 +2,42 @@
  * Created by Lauri on 23.6.2017.
  */
 
-import java.sql.Connection;
-import java.sql.*;
-import java.sql.SQLException;
-
 public class Action {
-    private String player;
-    private String action;
+
+    public enum Activity{
+        CHECKS,CALLS,BETS,RAISES,FOLDS
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Turn getTurn() {
+        return turn;
+    }
+
+    public Activity getActivity() {
+        return activity;
+    }
+
+    private Player player;
+    private Turn turn;
+    private Activity activity;
 
 
 
     private double amount;
 
-    public Action(String player_, String action_, double amount_) {
-        player = player_;
-        action = action_;
-        amount = amount_;
-    }
-
-    public String getPlayer() {
-        return player;
-    }
-
-    public String getAction() {
-        return action;
+    public Action(Turn turn, Player player, Activity activity, double amount) {
+        this.player = player;
+        this.turn = turn;
+        this.activity = activity;
+        this.amount = amount;
     }
 
     public double getAmount() { return amount; }
 
-    public void print() { System.out.println(player +" " + action);
+    public void print() { System.out.println(player +" " + activity);
         return;
     }
     /*
@@ -46,8 +53,8 @@ public class Action {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("ACTION:   " +"INSERT into turn_player_action(player_name, action, turn_id, amount) VALUES('"+ player +"', '" + action +"', " + i +", " +amount +");");
-        Query.SQL("INSERT into turn_player_action(player_name, action, turn_id, amount) VALUES('"+ player +"', '" + action +"', " + i +", " +amount +");"  , conn);
+        System.out.println("ACTION:   " +"INSERT into turn_player_action(player_name, activity, turn_id, amount) VALUES('"+ player +"', '" + activity +"', " + i +", " +amount +");");
+        Query.SQL("INSERT into turn_player_action(player_name, activity, turn_id, amount) VALUES('"+ player +"', '" + activity +"', " + i +", " +amount +");"  , conn);
 
     }
     */

@@ -9,6 +9,7 @@ public class Table {
     private String tableName;
     private ArrayList<Seat> seats;
     private int playerAmount;
+
     public Table(String tablename, int playerAmount) {
         this.tableName = tablename;
         this.seats = new ArrayList<>();
@@ -18,6 +19,13 @@ public class Table {
 
     public void addSeat(Player player, int number) {
         Seat seat = new Seat(player, number);
+        seats.add(seat);
+        if(seats.size() > playerAmount) {
+            System.out.println("ERROR: program added too many seats to table");
+        }
+    }
+
+    public void addSeat(Seat seat) {
         seats.add(seat);
         if(seats.size() > playerAmount) {
             System.out.println("ERROR: program added too many seats to table");
@@ -34,6 +42,20 @@ public class Table {
             seat.print();
         }
     }
+
+    public Player getPlayer(String name, Boolean dirtyFix){
+        // TODO: 30.7.2017  HORRIBLE fix for horrible regex. Adds and extra space to match regexs
+        if (dirtyFix){
+            name = name + ' ';
+        }
+        for (Seat s : seats){
+            if (s.getPlayer().getName().equals(name)){
+                return s.getPlayer();
+            }
+        }
+        return null;
+    }
+
     public int getPlayerSeatNumber(String name) {
         for (Seat seat : seats) {
             if (seat.player.name == name) {

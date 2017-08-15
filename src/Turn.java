@@ -2,8 +2,10 @@
  * Created by Lauri on 23.6.2017.
  */
 
+import java.sql.Array;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Vector;
 import java.sql.Connection;
 
@@ -13,57 +15,58 @@ public class Turn {
         HOLECARDS,FLOP,TURN,RIVER,SHOWDOWN,SUMMARY
     }
 
-    String tyyppi;
 
-
+    Phase phase;
 
     ArrayList<Action> actions;
 
-    public void setTyyppi(String tyyppi) {
-        this.tyyppi = tyyppi;
+    public void setTyyppi(Phase tyyppi) {
+        this.phase = tyyppi;
     }
 
     public void setHandid(long handid) {
         this.handid = handid;
     }
 
-    public ArrayList<Card> getTablecards() {
-        return tablecards;
+    public String[] getTablecards() {
+        return communityCards;
     }
 
-    public void setTablecards(ArrayList<Card> tablecards) {
-        this.tablecards = tablecards;
+    public void setTablecards(String[] communityCards) {
+        this.communityCards = communityCards;
     }
 
-    ArrayList<Card> tablecards;
+    String[] communityCards;
     long handid;
 
-    public Turn(String tyyppi_, long handid_, ArrayList<Card> cards) {
-        this.tyyppi = tyyppi_;
+    public Turn(Phase phase, long handid, String communityCards) {
+        this.phase = phase;
         this.actions = new ArrayList<>();
-        this.handid = handid_;
-        this.tablecards = cards;
-        System.out.println("Created " + tyyppi + " with ID " + handid);
+        this.handid = handid;
+        this.communityCards = (communityCards != null) ? communityCards.split(" ") : null;
+        Helper.debug("Turn created: "+phase+", ID: "+handid + ", cards: "+ Arrays.toString(this.communityCards));
     }
 
-    public ArrayList<Action> getActions() { return actions; }
-    public String getTyyppi() {
-        return tyyppi;
+
+
+    public Phase getTyyppi() {
+        return phase;
+
     }
 
     public long getHandid() {
         return handid;
     }
-
+    /*
     public void AddAction(String player, String action_, double amount_) {
         Action action = new Action(player, action_, amount_);
         actions.add(action);
-        System.out.println("Added action: " + player +" " + action_ + " to " + tyyppi +" " + handid );
+        System.out.println("Added action: " + player +" " + action_ + " to " + phase +" " + handid );
         return;
     }
-
+    */
     public void printActions() {
-        System.out.println(handid+ " " + tyyppi);
+        System.out.println(handid+ " " + phase);
         for (Action action : actions) {
             action.print();
         }
@@ -71,12 +74,15 @@ public class Turn {
     }
 
     public void printCards() {
+        Helper.debug(Arrays.toString(communityCards));
+        /*
         String printed = "";
-        for(Card card: tablecards) {
+        for(Card card: communityCards) {
             printed = printed.concat("[" + card.getCard() +"] ");
         }
-        System.out.println(tyyppi+ " " + handid +": " +printed);
+        System.out.println(phase+ " " + handid +": " +printed);
         return;
+        */
     }
     /*
     public void Save(Connection conn) {

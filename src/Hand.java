@@ -1,3 +1,4 @@
+import java.sql.PreparedStatement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -10,6 +11,7 @@ import java.sql.SQLException;
  */
 public class Hand{
 
+
     private String handName;
     private long id;
     private GameMode gameMode;
@@ -18,6 +20,7 @@ public class Hand{
     private ArrayList<Turn> turns;
     private HashMap<Player,String[]> holecards;
     private Table table;
+
 
     public Currency getCurrency() {
         return currency;
@@ -47,6 +50,7 @@ public class Hand{
         this.table = table;
     }
 
+
     public HashMap<Player, String[]> getHoldecards(){
         return this.holecards;
     }
@@ -56,6 +60,7 @@ public class Hand{
     }
 
     public Hand(String handName, long id, GameMode gameMode, String currency, String date, String timezone) throws ParseException{
+
         this.handName = handName;
         this.id = id;
         this.gameMode = gameMode;
@@ -104,37 +109,22 @@ public class Hand{
             System.out.println(player.getName() +" ["+players.get(player).get(0).getCard() +"] [" + players.get(player).get(1).getCard()+"]");
         }
     }
-    */
-    /*
+    
     public void Save(Connection conn) {
-        System.out.println(id +" RRRRRRRRRRRRRRRRR");
-        System.out.println("SQL: " + "INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');");
-        if(Query.SQL("INSERT into hands(table_name, gamemode_name, siteid, name, date) VALUES('"+table.getTableName() +"', '"+gameMode.replace("'", "") +"', '" + Long.toString(id) + "', '" + handName+ "', '" + date +"');" , conn)) {
-            for (Turn turn : turns) {
-                turn.Save(conn);
-            }
-
-            for (Player player : players.keySet()) {
-                String[] holeCards = new String[2];
-                holeCards[0] = players.get(player).get(0).getCard();
-                holeCards[1] = players.get(player).get(1).getCard();
-
-                int seatnumber = table.getPlayerSeatNumber(player.name);
-                Query.SQL("INSERT INTO hand_player(seat_nro, hand_id, playername, cards) VALUES(" + seatnumber + ", '" + id + "', '" + player.name + "', '{" + String.join(", ", holeCards) + "}');", conn);
-                System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            }
-            try {
-                conn.commit();
-
-            } catch (SQLException e) {
-                System.out.println(e.getMessage());
-            }
-        } else {
-            System.out.println("mitä helvettiä");
+        try {
+            PreparedStatement handStatement = conn.prepareStatement("INSERT INTO hands(table_name, gamemode_name, siteid, name, date) VALUES(?,?,?,?,?)");
+            handStatement.setString(1, table.getTableName());
+            handStatement.setString(2, gameMode);
+            handStatement.setString(3, Long.toString(id));
+            handStatement.setString(4, handName);
+            handStatement.setDate(5, new java.sql.Date(date.getTime()));
+            handStatement.executeUpdate();
+            Helper.debug("Hand saved");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
     }
-    */
+
 
     @Override
     public String toString() {

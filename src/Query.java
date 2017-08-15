@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import java.util.Map;
 
 public  class Query {
@@ -66,9 +67,11 @@ public  class Query {
             } catch (SQLException e) {
                 e.printStackTrace();
                 con.rollback();
+
             }
         }
     }
+
 
     public void save(Player player, Game game) throws SQLException {
         if (player != null && !playerExists(player.getName(), game)) {
@@ -158,6 +161,7 @@ public  class Query {
         ResultSet results = playerQueryStatement.executeQuery();
         return results.next();
     }
+
 }
 
 

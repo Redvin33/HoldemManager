@@ -15,7 +15,9 @@ public class Turn {
         HOLECARDS,FLOP,TURN,RIVER,SHOWDOWN,SUMMARY
     }
 
+
     Phase phase;
+
     ArrayList<Action> actions;
 
     public void setTyyppi(Phase tyyppi) {
@@ -46,8 +48,10 @@ public class Turn {
     }
 
 
+
     public Phase getTyyppi() {
         return phase;
+
     }
 
     public long getHandid() {

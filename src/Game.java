@@ -24,7 +24,9 @@ public class Game implements Runnable {
     //Matches '*** RIVER *** [Kd 7s Ac 6c] [6d]' and '*** SHOW DOWN ***'
     public static Pattern turnPattern = Pattern.compile("[*]{3}.(.+).[*]{3}.?(?:\\[(.*?)\\])*.?(?:\\[(.*?)\\])*");
     //Matches action
+
     public static Pattern actionPattern = Pattern.compile("(.+):.(folds|calls|bets|raises|checks).?([$|€|£])?(\\d+(?:\\.\\d+)?)?(?:.to.)?([$|€|£])?(\\d+(?:\\.\\d+)?)?.?");
+
     //Matches holecards
     //OLD (Seat.\d+:|.+:|.*).?(.*)(shows|showed|mucked|Dealt.to).(.*)\[(.*)\].{0,120}
     public static Pattern holecardsPattern = Pattern.compile("(?:Dealt to\\s(.*)?\\s\\[(.*)?\\])|(?:Seat\\s\\d+:\\s)([^\\s]*)\\s.*(?:showed|folded|mucked).*\\[(.*)\\].*");
@@ -39,9 +41,11 @@ public class Game implements Runnable {
     public long timeout = 5000;
 
     public Game(String logFile) {
+
         query = new Query();
         //con = Container.createConnection();
         this.logTailer = new Tailer(new File(logFile), new LogListener(queue, this), 1000, false);
+        this.query = new Query();
     }
 
     public void stop() {
@@ -76,6 +80,7 @@ public class Game implements Runnable {
                     Matcher holecardMatcher = holecardsPattern.matcher(line);
 
                     Helper.debug("LINE: " + line);
+
 
                     if (handMatcher.matches()) {
                         if (phase == Turn.Phase.SUMMARY) {
@@ -129,6 +134,7 @@ public class Game implements Runnable {
                                 amount = 0.0;
                                 break;
                         }
+
                         Action action = new Action(turn
                                 , table.getPlayer(actionMatcher.group(1), true)
                                 , activity
@@ -143,6 +149,7 @@ public class Game implements Runnable {
                             if (!hand.getHoldecards().containsKey(player)) {
                                 hand.addHolecards(player, holecardMatcher.group(4));
                             }
+
                         }
                     }
                     if (phase == Turn.Phase.SUMMARY && queue.isEmpty()) {
@@ -152,6 +159,7 @@ public class Game implements Runnable {
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
+
             } catch (SQLException e) {
                 try {
                     query.rollback();
@@ -161,6 +169,7 @@ public class Game implements Runnable {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
+
         }
     }
 }

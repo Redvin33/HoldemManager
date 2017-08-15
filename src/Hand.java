@@ -93,7 +93,7 @@ public class Hand{
 
 
     }
-
+    /*
     public void printActions() {
 
         for(Turn turn : turns) {
@@ -101,7 +101,7 @@ public class Hand{
         }
 
     }
-    /*
+
     public void printStartingHands() {
 
         System.out.println("Hand "+ id + " starting hands");
@@ -130,4 +130,5 @@ public class Hand{
     public String toString() {
         return handName + " #" + id + ", " + gameMode + date;
     }
+    */
 }

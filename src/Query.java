@@ -1,13 +1,10 @@
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 import java.util.Map;
 
 public  class Query {
 
-    private Connection con;
+    public Connection con;
 
     public Query(){
         con = Container.createConnection();
@@ -46,6 +43,7 @@ public  class Query {
                 handStatement.setString(5, hand.getHandName());
                 handStatement.setDate(6, new java.sql.Date(hand.getDate().getTime()));
                 handStatement.executeUpdate();
+
                 con.commit();
                 Helper.debug("Hand saved");
             } catch (SQLException e) {
@@ -64,6 +62,7 @@ public  class Query {
                 turnStatement.setArray(3, (turn.getTablecards() != null) ? con.createArrayOf("TEXT", turn.getTablecards()) : null);
                 turnStatement.executeUpdate();
                 Helper.debug("Turn saved");
+                con.commit();
             } catch (SQLException e) {
                 e.printStackTrace();
                 con.rollback();
@@ -95,6 +94,7 @@ public  class Query {
                 PreparedStatement tableStatement = con.prepareStatement("INSERT INTO tables(name) VALUES (?)");
                 tableStatement.setString(1, table.getTableName());
                 tableStatement.executeUpdate();
+                con.commit();
                 Helper.debug("Table saved");
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -112,6 +112,7 @@ public  class Query {
                 modeStatement.setDouble(2, mode.getMinstake());
                 modeStatement.setDouble(3, mode.getMaxstake());
                 modeStatement.executeUpdate();
+                con.commit();
                 Helper.debug("Game mode saved");
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -123,13 +124,14 @@ public  class Query {
     public void save(Action action) throws SQLException {
         if (action != null) {
             try {
-                PreparedStatement actionStatement = con.prepareStatement("INSERT INTO turn_player_action(player_name,action,site_id,phase,amount) VALUES (?,?,?,?,?)");
+                PreparedStatement actionStatement = con.prepareStatement("INSERT INTO turn_player_action(player_name,action,site_id_,phase_,amount) VALUES (?,?,?,?,?)");
                 actionStatement.setString(1, action.getPlayer().getName());
                 actionStatement.setString(2, action.getActivity().toString());
                 actionStatement.setLong(3, action.getTurn().getHandid());
                 actionStatement.setString(4, action.getTurn().getTyyppi().toString());
                 actionStatement.setDouble(5, action.getAmount());
                 actionStatement.executeUpdate();
+                con.commit();
             } catch (SQLException e) {
                 e.printStackTrace();
                 con.rollback();
@@ -141,7 +143,12 @@ public  class Query {
         if (hand != null && hand.getHoldecards() != null) {
             try {
                 PreparedStatement holecardsStatement = con.prepareStatement("INSERT INTO hand_player(hand_id,playername,cards) VALUES (?,?,?)");
+
                 for (Map.Entry<Player, String[]> entry : hand.getHoldecards().entrySet()) {
+                    if (entry.getKey().getName().isEmpty()) {
+                        System.out.println(hand.getId() +" !!!!!!!!!!" );
+
+                    }
                     holecardsStatement.setLong(1, hand.getId());
                     holecardsStatement.setString(2, entry.getKey().getName());
                     holecardsStatement.setArray(3, con.createArrayOf("TEXT", entry.getValue()));
@@ -159,7 +166,54 @@ public  class Query {
         PreparedStatement playerQueryStatement = con.prepareStatement("SELECT siteid FROM hands WHERE siteid = ?");
         playerQueryStatement.setLong(1, handId);
         ResultSet results = playerQueryStatement.executeQuery();
+
         return results.next();
+    }
+
+    public double VPIP(String player) throws SQLException {
+        try {
+
+            Statement stmt = con.createStatement();
+            ResultSet hands = stmt.executeQuery("Select count(*) from turn_player_action, turns where turns.site_id = turn_player_action.site_id_ and phase='HOLECARDS' and player_name ='"+player+"';");
+            Statement stmt1 = con.createStatement();
+            ResultSet vpip = stmt1.executeQuery("Select count(*) from turn_player_action, turns where turns.site_id = turn_player_action.site_id_ and phase='HOLECARDS' and player_name ='"+player+"' and (action='RAISES' or action='CALLS');");
+
+            hands.next();
+            vpip.next();
+
+            int hands_ = hands.getInt(1);
+            int vpip_ = vpip.getInt(1);
+
+            return((double)vpip_/(double)hands_)*100;
+
+        } catch(SQLException e) {
+            System.out.println(e.getMessage());
+            con.rollback();
+            return 0.0;
+        }
+    }
+
+    public double betFlop(String player) throws SQLException {
+        try {
+            Statement check_stmt = con.createStatement();
+            ResultSet checks = check_stmt.executeQuery("Select count(*) from turn_player_action, turns where turns.site_id = turn_player_action.site_id_ and phase='FLOP' and player_name ='"+player+"' and action ='CHECKS' ;");
+            Statement bets_stmt = con.createStatement();
+            ResultSet bets = bets_stmt.executeQuery("Select count(*) from turn_player_action, turns where turns.site_id = turn_player_action.site_id_ and phase='FLOP' and player_name='"+player+"' and action = 'BETS';");
+
+            checks.next();
+            bets.next();
+
+
+            int bets_ = bets.getInt(1);
+            int checks_ = checks.getInt(1);
+
+            return ((double)bets_/((double)bets_+(double)checks_))*100;
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            con.rollback();
+            return 0.0;
+        }
     }
 
 }

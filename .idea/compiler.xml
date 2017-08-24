@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="HoldemManager" />
         <module name="OpenPokerTracker" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="HoldemManager" target="" />
+      <module name="HoldemManager" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

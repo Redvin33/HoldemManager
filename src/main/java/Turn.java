@@ -94,8 +94,6 @@ public class Turn {
         }
         if(Query.SQL("INSERT into turns(site_id, phase, communitycards) VALUES('"+ handid +"', '"+tyyppi+ "', '{"+ String.join(", ", community) +"}');", conn ))
         {
-
-
             System.out.println("Saved " + tyyppi + " " + handid + " to database.");
             for (Action action : actions) {
                 action.Save(conn, handid, tyyppi);

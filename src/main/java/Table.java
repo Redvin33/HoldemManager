@@ -69,7 +69,6 @@ public class Table {
         System.out.println(tableName);
         Query.SQL("INSERT INTO tables(name) values('"+ tableName +"');", conn);
         System.out.println("moi");
-
     }
     */
 

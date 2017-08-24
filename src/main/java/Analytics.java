@@ -21,7 +21,6 @@ public class Analytics {
         } catch(SQLException e) {
             System.out.println(e.getMessage());
         }
-
         ResultSet buttonbets = Query.result("Select count(*) from turn_player_action, turns, hand_player, hands where turn_player_action.turn_id = turns.id  and turn_player_action.player_name = hand_player.playername and hands.siteid = hand_player.hand_id and hands.siteid = turns.site_id and playername = '"+player+"' and action = 'raises' and phase ='PREFLOP' and  seat_nro =1" , conn);
         try {
             buttonbets.next();
@@ -29,12 +28,10 @@ public class Analytics {
         } catch(SQLException e) {
             System.out.println(e.getMessage());
         }
-
         if (buttons == 0) {
             buttons = 1;
         }
         return ((double)buttonbets1/(double)buttons)*100;
-
     }
     */
     public static void test() {

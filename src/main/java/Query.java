@@ -41,7 +41,7 @@ public  class Query {
                 handStatement.setString(3, hand.getGameMode().getGamemode());
                 handStatement.setLong(4, hand.getId());
                 handStatement.setString(5, hand.getHandName());
-                handStatement.setDate(6, new java.sql.Date(hand.getDate().getTime()));
+                handStatement.setDate(6, new Date(hand.getDate().getTime()));
                 handStatement.executeUpdate();
 
                 con.commit();
@@ -217,5 +217,4 @@ public  class Query {
     }
 
 }
-
 

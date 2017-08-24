@@ -95,15 +95,11 @@ public class Hand{
     }
     /*
     public void printActions() {
-
         for(Turn turn : turns) {
             turn.printActions();
         }
-
     }
-
     public void printStartingHands() {
-
         System.out.println("Hand "+ id + " starting hands");
         for(Player player : players.keySet()) {
             System.out.println(player.getName() +" ["+players.get(player).get(0).getCard() +"] [" + players.get(player).get(1).getCard()+"]");
@@ -124,8 +120,6 @@ public class Hand{
             e.printStackTrace();
         }
     }
-
-
     @Override
     public String toString() {
         return handName + " #" + id + ", " + gameMode + date;

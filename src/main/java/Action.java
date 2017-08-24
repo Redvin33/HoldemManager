@@ -47,15 +47,12 @@ public class Action {
         int i = 0;
         try {
             rs.next();
-
             i = rs.getInt(1);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         System.out.println("ACTION:   " +"INSERT into turn_player_action(player_name, activity, turn_id, amount) VALUES('"+ player +"', '" + activity +"', " + i +", " +amount +");");
         Query.SQL("INSERT into turn_player_action(player_name, activity, turn_id, amount) VALUES('"+ player +"', '" + activity +"', " + i +", " +amount +");"  , conn);
-
     }
     */
 

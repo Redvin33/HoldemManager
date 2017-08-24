@@ -1,4 +1,3 @@
-
 public class Player {
     public String name;
     int hands;
